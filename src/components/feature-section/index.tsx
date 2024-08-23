@@ -12,7 +12,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, imgSrc })
     <div>
       {imgSrc && (
         <div className={tw(`mb-4`)}>
-          <img src={imgSrc} alt={title} className={tw(`w-full h-80 object-cover rounded-md`)} />
+          <img src={imgSrc} alt={title} className={tw(`w-full h-80 object-contain rounded-md`)} />
         </div>
       )}
       <div className={tw(`flex items-center mb-6`)}>
