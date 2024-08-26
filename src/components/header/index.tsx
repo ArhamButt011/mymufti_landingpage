@@ -1,9 +1,5 @@
 import { tw, css } from 'twind/css';
 import Button from '@/components/button';
-import Netlify from '@/constants/svg/netlify.svg';
-import Nike from '@/constants/svg/nike.svg';
-import Figma from '@/constants/svg/figma.svg';
-import Aws from '@/constants/svg/aws.svg';
 
 const headerStyle = css`
   background-color: #ffffff;
@@ -60,13 +56,6 @@ const Header = () => (
             combined to serve your spiritual growth.
           </p>
         </div>
-
-        {/* <div className={tw(`flex items-center justify-center mx-auto flex-wrap`)}>
-          <Aws className={tw(`m-12 mb-8`)} width={120} />
-          <Netlify className={tw(`m-12`)} width={140} />
-          <Nike className={tw(`m-12`)} width={140} />
-          <Figma className={tw(`m-12`)} width={140} />
-        </div> */}
       </div>
     </div>
   </header>

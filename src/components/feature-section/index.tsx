@@ -61,26 +61,6 @@ const FeatureSection = () => {
       imgSrc: 'images/img6.svg',
     },
   ];
-
-  // const FeatureCard = ({ title, description, imgSrc }) => (
-  //   <div className={tw(`bg-white rounded-lg shadow-lg p-6 lg:p-8 text-left flex flex-col justify-between`)}>
-  //     <div>
-  //       {imgSrc && (
-  //         <div className={tw(`mb-4`)}>
-  //           <img src={imgSrc} alt={title} className={tw(`w-full h-80 object-cover rounded-md`)} />
-  //         </div>
-  //       )}
-  //       <div className={tw(`flex items-center mb-6`)}>
-  //         <Check width={20} height={20} fill="currentColor" className={tw(`h-6 w-6 text-teal-600`)} />
-  //         <div className={tw(`ml-4 text-xl font-bold text-gray-800`)}>{title}</div>
-  //       </div>
-  //       <p className={tw(`leading-loose text-gray-500`)}>
-  //         {description}
-  //       </p>
-  //     </div>
-  //   </div>
-  // );
-
   return (
     <section className={tw(`bg-white pb-6`)}>
       <div className={tw(`max-w-7xl mx-auto p-4 sm:p-6 lg:p-8`)}>

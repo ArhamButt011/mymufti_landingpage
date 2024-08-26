@@ -1,17 +1,4 @@
 import { tw } from 'twind';
-import Check from '@/constants/svg/check.svg';
-import Button from '@/components/button';
-
-const features = [
-  `Laboris nulla`,
-  `Lorem pariatur nisi`,
-  `Id aute amet pariatur`,
-  `Do duis sint aliquip`,
-  `Nostrud duis tempor`,
-  `Consequat eiusmod`,
-  `Reprehenderit`,
-  `Adipisicing reprehenderit`,
-];
 
 const PricingTable = () => (
   <section className={tw(`bg-teal-600 text-white shadow-inner pt-12 mx-10 rounded-lg`)}>
@@ -22,9 +9,6 @@ const PricingTable = () => (
           <p className={tw(`text-base leading-6 mb-8`)}>
             Download the app and create your account in just 2 easy steps!
           </p>
-          {/* <button className={tw(`text-dark font-sans font-medium py-2 px-4 border rounded`)}>
-            Get  Started
-          </button> */}
           <button
             className={tw(
               `bg-white text-teal-500 border-teal-500 rounded-full font-medium py-2 px-4 hover:bg-teal-500 hover:border-slate-100 hover:text-cyan-50`,
