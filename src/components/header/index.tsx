@@ -8,31 +8,48 @@ const headerStyle = css`
 
 const Header = () => (
   <header className={tw(headerStyle)}>
-    <div className={tw(`max-w-4xl mx-auto py-16 px-14 sm:px-6 lg:px-8`)} id="home">
-      <h1 className={tw(`font-sans font-bold text-4xl md:text-5xl lg:text-8xl text-center leading-snug text-gray-800`)}>
-        <span style={{ color: '#38b89a' }}>Solution</span> Of All Islamic{' '}
-        <span style={{ color: '#38b89a' }}>Queries</span>
-      </h1>
-      <div className={tw(`max-w-xl mx-auto`)}>
-        <p className={tw(`mt-10 text-gray-500 text-center text-xl lg:text-3xl`)}>
-          Explore and ask questions, and connect with scholars with personal appointments for insightful guidance on
-          your journey of learning and understanding.
-        </p>
+    <div className={tw(`max-w-6xl mx-auto py-16 px-14 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center`)} id="home">
+      {/* Left Text Content */}
+      <div className={tw(`md:w-1/2 text-left`)}>
+        <h1 className={tw(`font-sans font-bold text-4xl md:text-5xl lg:text-6xl leading-snug text-gray-800`)}>
+          <span style={{ color: '#38b89a' }}>Solution</span> for All Your{' '}
+          <span style={{ color: '#38b89a' }}>Islamic Queries</span>
+        </h1>
+        <div>
+          <p className={tw(`mt-6 text-gray-500 text-lg lg:text-xl`)}>
+            Ask Anything, Anytime, From Anywhere
+            <br />By Verified Scholars
+          </p>
+          <p className={tw(`mt-4 text-gray-500 text-lg lg:text-xl`)}>
+            Explore Islamic knowledge via private or public questions, and connect with verified scholars through personal appointments. Get guidance on diverse topics, and gain insightful support on your journey of learning and understanding.
+          </p>
+        </div>
+        <div className={tw(`mt-8 flex items-center`)}>
+          <Button primary> Explore</Button>
+        </div>
       </div>
-      <div className={tw(`mt-10 flex justify-center items-center w-full mx-auto`)}>
-        <Button primary>Get started</Button>
-        <span className={tw(`mx-2`)}>or</span>
-        <Button>Contact us</Button>
+      
+      {/* Right Image Content */}
+      <div className={tw(`w-full h-full md:w-1/2 mt-10 md:mt-0 flex justify-center md:justify-end`)}>
+        <img 
+          src="/images/phones.svg"
+          alt="MyMufti App Screenshots" 
+          className={tw(`w-full h-auto object-cover`)}
+        />
       </div>
+
+
     </div>
-    <div className={tw(`flex justify-center w-full`)}>
-      <div className={tw(`mt-4 w-full bg-gray-100`)}>
+    
+    <div className={tw(`flex justify-center w-full bg-white`)}>
+      <div className={tw(`mt-4 w-full bg-white`)}>
         <p
           className={tw(
-            `font-sans font-bold text-4xl md:text-4xl lg:text-5xl text-center leading-snug text-gray-800 mt-5 mb-0`,
+            `font-sans font-bold text-4xl md:text-4xl lg:text-5xl text-center leading-snug text-gray-800 mt-6 mb-0`,
           )}
         >
-          Meet Our<span style={{ color: '#38b89a', fontFamily: 'cursive' }}> Scholars</span>
+          
+          Why you <span style={{ color: '#38b89a' }}> Choose</span> Us?
         </p>
         <div
           className={tw(`
@@ -45,15 +62,16 @@ const Header = () => (
   md:p-6 
   lg:p-8 
   text-center 
-  bg-gray-100
+  bg-white
   sm:text-base 
   md:text-lg 
   lg:text-xl
 `)}
         >
-          <p>
-            Meet our scholars: Your trusted guides on the path of knowledge. Expertise, wisdom, and accessibility
-            combined to serve your spiritual growth.
+          <p className={tw(`mt-1 text-gray-500 text-center text-xl lg:text-xl`)}>
+            Our platform offers direct access to esteemed scholars for private consultations, <br />
+            fosters open dialogue through public discussions, keeps you updated on Islamic <br />
+             events, and facilitates convenient appointments.
           </p>
         </div>
       </div>

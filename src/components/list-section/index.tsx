@@ -1,6 +1,9 @@
-import { tw } from 'twind';
+"use client"
 
-const listItems = [
+import { tw } from "twind"
+import { useState } from "react"
+
+const faqItems = [
   {
     title: `Can you explain the concept of Zakat in Islam?`,
     description: `Zakat is a mandatory charitable contribution in Islam, typically calculated as a percentage of one's wealth and assets, and distributed to those in need, such as the poor, needy, and those in debt.`,
@@ -13,46 +16,94 @@ const listItems = [
     title: `Explain the role of prayer (Salah) and Fasting in Islam?`,
     description: `Salah (prayer) is a daily spiritual practice, strengthening the bond between Muslims and Allah, fostering discipline, mindfulness, and spiritual connection. Fasting during Ramadan is an act of devotion, self-discipline, and purification, promoting empathy, gratitude, and spiritual growth among Muslims worldwide.`,
   },
-];
+  {
+    title: `Why do you make distinction among our messengers?`,
+    description: `In Islam, we are taught to respect all messengers equally as they all conveyed Allah's message. The Quran states that we should not make distinctions between them as they all served the same purpose of guiding humanity.`,
+  },
+  {
+    title: `Can you explain the rights of Parents?`,
+    description: `In Islam, parents hold a position of high honor. Children are obligated to show respect, obedience, and kindness to their parents at all times. Taking care of parents, especially in their old age, is considered a religious duty and a path to Paradise.`,
+  },
+]
 
-const ListSection = () => (
-  <section className={tw(`lg:py-28 pt-28 overflow-hidden`)} id="faqs">
-    <div className={tw(`max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-white`)}>
-      <div className={tw(`mb-16 text-center`)}>
-        <p className={tw(`mt-2 pb-4 text-5xl lg:text-6xl font-bold tracking-tight text-gray-900`)}>
-          Frequently Asked <span style={{ color: '#38b89a' }}>Questions</span>
-        </p>
-      </div>
-      <div className={tw(`flex flex-wrap -mx-8 items-center`)}>
-        <div className={tw(`w-full lg:w-1/2 px-8`)}>
-          <ul className={tw(`space-y-12`)}>
-            {listItems.map((item, index) => (
-              <li className={tw(`flex -mx-4`)} key={item.title}>
-                <div className={tw(`px-4`)}>
-                  <span
-                    className={tw(`flex w-16 h-16 mx-auto items-center
-                      justify-center text-2xl font-bold rounded-full
-                      bg-teal-50 text-teal-500`)}
-                  >
-                    {index + 1}
-                  </span>
-                </div>
-                <div className={tw(`px-4`)}>
-                  <h3 className={tw(`my-4 text-xl font-semibold`)}>{item.title}</h3>
-                  <p className={tw(`text-gray-500 leading-loose`)}>{item.description}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+const ListSection = () => {
+  const [expandedIndex, setExpandedIndex] = useState(0)
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? -1 : index)
+  }
+
+  return (
+    <section className={tw(`py-20 overflow-hidden bg-white`)} id="faqs">
+      <div className={tw(`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`)}>
+        <div className={tw(`mb-16`)}>
+          <h2 className={tw(`text-4xl font-bold text-center`)}>
+            Frequently Asked <span style={{ color: "#38b89a" }}>Questions</span>
+          </h2>
         </div>
-        <div className={tw(`w-full lg:w-1/2 px-8`)}>
-          <div className={tw(`lg:mb-12 lg:mb-0 pb-12 lg:pb-0 mt-16 lg:mt-0 mx-6 lg:mx-0`)}>
-            <img src="./images/fqa.svg" alt="" />
+
+        <div className={tw(`flex flex-col lg:flex-row items-center`)}>
+          {/* Left side - Illustration */}
+          <div className={tw(`w-full lg:w-1/2 mb-12 lg:mb-0 flex justify-center`)}>
+            <div className={tw(`relative`)}>
+              <img src="/images/fqa.svg" alt="FAQ Illustration" className={tw(`w-full max-w-md`)} />
+            </div>
+          </div>
+
+          {/* Right side - FAQ accordion */}
+          <div className={tw(`w-full lg:w-1/2`)}>
+            <div className={tw(`space-y-4`)}>
+              {faqItems.map((item, index) => (
+                <div key={index} className={tw(`border-b border-gray-200 pb-4 ${index === 0 ? "pt-0" : "pt-4"}`)}>
+                  <button
+                    onClick={() => toggleExpand(index)}
+                    className={tw(`flex justify-between items-center w-full text-left focus:outline-none`)}
+                  >
+                    <span className={tw(`text-base font-medium text-gray-900`)}>{item.title}</span>
+                    <span className={tw(`ml-6 flex-shrink-0`)}>
+                      {expandedIndex === index ? (
+                        <svg
+                          className={tw(`h-5 w-5 text-teal-500`)}
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          className={tw(`h-5 w-5 text-teal-500`)}
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      )}
+                    </span>
+                  </button>
+                  {expandedIndex === index && (
+                    <div className={tw(`mt-2 pr-12`)}>
+                      <p className={tw(`text-gray-500`)}>{item.description}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  )
+}
 
-export default ListSection;
+export default ListSection
+

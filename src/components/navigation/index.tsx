@@ -117,7 +117,9 @@ const Navigation = () => {
           </div>
           <div className={tw(`hidden md:block`)}>
             <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              <Button primary>Contact US</Button>
+              {/* <Button primary modifier="rounded-full px-6 py-2" onClick={() => window.location.href = '/contactus'}>Contact US</Button> */}
+              <Button primary modifier="rounded-full px-6 py-2">Contact US</Button>
+
             </div>
           </div>
           <div className={tw(`-mr-2 flex md:hidden`)}>

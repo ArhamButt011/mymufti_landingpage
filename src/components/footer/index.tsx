@@ -17,7 +17,7 @@ const aboutLinks = [
 const resourceLinks = [`About US`, `Contact US`, `Privacy Policy`, `Terms and Conditions`];
 
 const Footer = () => (
-  <footer className={tw(`bg-white border-t border-gray-400 pt-14 pb-16`)}>
+  <footer className={tw(`bg-white pt-14 pb-16`)}>
     <div className={tw(`max-w-7xl mx-auto text-gray-400 px-8 lg:px-0 flex flex-wrap`)}>
       <div className={tw(`w-full lg:w-1/1`)}>
         <ul className={tw(`text-lg font-light flex flex-wrap w-full`)}>
@@ -66,6 +66,9 @@ const Footer = () => (
         </ul>
       </div>
     </div>
+    <div className={tw(`mt-10 border-t border-gray-300 pt-4 text-center text-sm text-gray-500`)}>
+  © {new Date().getFullYear()} My Mufti. All rights reserved.
+</div>
   </footer>
 );
 

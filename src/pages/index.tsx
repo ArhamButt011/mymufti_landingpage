@@ -1,7 +1,11 @@
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
 import Header from '@/components/header';
+import FeatureCards from '@/components/feature-cards'; 
+import TrustedSourceSection from '@/components/Trusted-source-section'; 
 import VideoSection from '@/components/video-section';
+import AppFeaturesShowcase from "@/components/AppFeatureShowcase"
+import PublicReviewSection from "@/components/PublicReview"
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
 import CasesSection from '@/components/cases-section';
@@ -18,11 +22,15 @@ export default function Home() {
       />
       <Header />
       <main>
+        <FeatureCards />
+        <TrustedSourceSection />
         <VideoSection />
+        <AppFeaturesShowcase />
+        <PublicReviewSection />
+        {/* Frequently asked questions */}
         <ListSection />
-        <FeatureSection />
-        <CasesSection />
-        <SocialProof />
+        {/* recenty posted questions */}
+        <CasesSection /> 
         <PricingTable />
       </main>
       <Footer />
