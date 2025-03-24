@@ -1,11 +1,11 @@
 import { NextSeo } from 'next-seo';
 import Page from '@/components/page';
 import Header from '@/components/header';
-import FeatureCards from '@/components/feature-cards'; 
-import TrustedSourceSection from '@/components/Trusted-source-section'; 
+import FeatureCards from '@/components/feature-cards';
+import TrustedSourceSection from '@/components/Trusted-source-section';
 import VideoSection from '@/components/video-section';
-import AppFeaturesShowcase from "@/components/AppFeatureShowcase"
-import PublicReviewSection from "@/components/PublicReview"
+import AppFeaturesShowcase from '@/components/AppFeatureShowcase';
+import PublicReviewSection from '@/components/PublicReview';
 import ListSection from '@/components/list-section';
 import FeatureSection from '@/components/feature-section';
 import CasesSection from '@/components/cases-section';
@@ -21,7 +21,7 @@ export default function Home() {
         description="My Mufti is an intuitive web application designed to streamline and enhance the management of mufti (Islamic legal scholar) appointments and schedules. This platform caters specifically to Islamic scholars and institutions, offering a range of features that facilitate efficient scheduling, communication, and documentation."
       />
       <Header />
-      <main>
+      <main className="bg-[#F9FDFC]">
         <FeatureCards />
         <TrustedSourceSection />
         <VideoSection />
@@ -30,7 +30,7 @@ export default function Home() {
         {/* Frequently asked questions */}
         <ListSection />
         {/* recenty posted questions */}
-        <CasesSection /> 
+        <CasesSection />
         <PricingTable />
       </main>
       <Footer />
