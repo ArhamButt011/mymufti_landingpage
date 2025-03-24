@@ -1,7 +1,8 @@
-"use client"
+'use client';
 
-import { tw } from "twind"
-import { useState } from "react"
+import { tw } from 'twind';
+import { useState } from 'react';
+import Text from '../UI/Text';
 
 const faqItems = [
   {
@@ -24,22 +25,22 @@ const faqItems = [
     title: `Can you explain the rights of Parents?`,
     description: `In Islam, parents hold a position of high honor. Children are obligated to show respect, obedience, and kindness to their parents at all times. Taking care of parents, especially in their old age, is considered a religious duty and a path to Paradise.`,
   },
-]
+];
 
 const ListSection = () => {
-  const [expandedIndex, setExpandedIndex] = useState(0)
+  const [expandedIndex, setExpandedIndex] = useState(0);
 
   const toggleExpand = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? -1 : index)
-  }
+    setExpandedIndex(expandedIndex === index ? -1 : index);
+  };
 
   return (
     <section className={tw(`py-20 overflow-hidden bg-white`)} id="faqs">
       <div className={tw(`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`)}>
         <div className={tw(`mb-16`)}>
-          <h2 className={tw(`text-4xl font-bold text-center`)}>
-            Frequently Asked <span style={{ color: "#38b89a" }}>Questions</span>
-          </h2>
+          <Text as="h2" className={tw(`text-center`)}>
+            Frequently Asked <span style={{ color: '#38b89a' }}>Questions</span>
+          </Text>
         </div>
 
         <div className={tw(`flex flex-col lg:flex-row items-center`)}>
@@ -54,7 +55,7 @@ const ListSection = () => {
           <div className={tw(`w-full lg:w-1/2`)}>
             <div className={tw(`space-y-4`)}>
               {faqItems.map((item, index) => (
-                <div key={index} className={tw(`border-b border-gray-200 pb-4 ${index === 0 ? "pt-0" : "pt-4"}`)}>
+                <div key={index} className={tw(`border-b border-gray-200 pb-4 ${index === 0 ? 'pt-0' : 'pt-4'}`)}>
                   <button
                     onClick={() => toggleExpand(index)}
                     className={tw(`flex justify-between items-center w-full text-left focus:outline-none`)}
@@ -92,7 +93,7 @@ const ListSection = () => {
                   </button>
                   {expandedIndex === index && (
                     <div className={tw(`mt-2 pr-12`)}>
-                      <p className={tw(`text-gray-500`)}>{item.description}</p>
+                      <Text className={tw(``)}>{item.description}</Text>
                     </div>
                   )}
                 </div>
@@ -102,8 +103,7 @@ const ListSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ListSection
-
+export default ListSection;

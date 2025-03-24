@@ -1,4 +1,5 @@
 import { tw } from 'twind';
+import Text from '../UI/Text';
 
 const TrustedSourceSection = () => {
   return (
@@ -14,14 +15,14 @@ const TrustedSourceSection = () => {
 
           {/* Right Section - Paragraphs */}
           <div className={tw(`md:w-2/3`)}>
-            <p className={tw(`text-gray-600 mb-6`)}>
+            <Text className={tw(`text-gray-600 mb-6`)}>
               At My Mufti, we believe that every Muslim should have easy access to authentic Islamic knowledge. That's
               why we've created a "free app" that brings verified Islamic scholars right to your fingertips. Whether
               you're seeking answers to personal questions or guidance on complex matters of faith, Mumufti is here to
               support you — all from the privacy of your home.
-            </p>
+            </Text>
 
-            <p className={tw(`text-gray-800 font-medium mb-6`)}>
+            <p className={tw(`font-medium mb-6 text-[16px] sm:text-[18px] `)}>
               We're on a mission to make Islamic knowledge accessible to every corner of the world. But we can't do it
               alone, help Muslims worldwide — donate now and support our cause!
             </p>
@@ -32,12 +33,12 @@ const TrustedSourceSection = () => {
           </div>
         </div>
 
-        <br/>
-        <br/>
+        <br />
+        <br />
 
         <div className={tw(`grid grid-cols-1 md:grid-cols-3 gap-6`)}>
           {/* Card 1: Ask Anything, Anytime */}
-          <div className={tw(`bg-[#DADADA] rounded-lg p-6`)}>
+          <div className={tw(`bg-[#F2F2F2] rounded-lg p-6`)}>
             <div className={tw(`w-10 h-10 rounded-full bg-white flex items-center justify-center mb-4`)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,11 +54,11 @@ const TrustedSourceSection = () => {
               </svg>
             </div>
             <h3 className={tw(`text-lg font-bold mb-2`)}>Ask Anything, Anytime</h3>
-            <p className={tw(`text-gray-600 text-sm`)}>Get precise, reliable answers to your questions.</p>
+            <Text className={tw(`text-gray-600`)}>Get precise, reliable answers to your questions.</Text>
           </div>
 
           {/* Card 2: Connect with Verified Scholars */}
-          <div className={tw(`bg-[#DADADA] rounded-lg p-6`)}>
+          <div className={tw(`bg-[#F2F2F2] rounded-lg p-6`)}>
             <div className={tw(`w-10 h-10 rounded-full bg-white flex items-center justify-center mb-4`)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +74,7 @@ const TrustedSourceSection = () => {
           </div>
 
           {/* Card 3: Learn in Privacy and Comfort */}
-          <div className={tw(`bg-[#DADADA] rounded-lg p-6`)}>
+          <div className={tw(`bg-[#F2F2F2] rounded-lg p-6`)}>
             <div className={tw(`w-10 h-10 rounded-full bg-white flex items-center justify-center mb-4`)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

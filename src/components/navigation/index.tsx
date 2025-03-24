@@ -1,6 +1,7 @@
 import { tw } from 'twind';
 import { useState } from 'react';
 import Button from '@/components/button';
+import { useRouter } from 'next/navigation';
 
 interface IMenuButton {
   toggleMenu: React.MouseEventHandler<HTMLButtonElement>;
@@ -15,19 +16,19 @@ type Link = {
 const links = [
   {
     label: `Home`,
-    href: `#home`, // ID of the Home section
+    href: `#home`,
   },
   {
     label: `Scholars`,
-    href: `#scholars`, // ID of the Scholars section
+    href: `#scholars`,
   },
   {
     label: `FAQs`,
-    href: `#faqs`, // ID of the FAQs section
+    href: `#faqs`,
   },
   {
     label: `Question`,
-    href: `#question`, // ID of the Question section
+    href: `#question`,
   },
 ];
 
@@ -37,7 +38,7 @@ const MenuButton = ({ toggleMenu, showMenu }: IMenuButton) => (
     aria-controls="mobile-menu"
     aria-expanded={showMenu}
     onClick={toggleMenu}
-    className={tw(`p-2 text-gray-400`)}
+    className={tw(`p-2 text-gray-400 focus:outline-none`)}
   >
     <span className={tw(`sr-only`)}>Open menu</span>
     {showMenu ? (
@@ -90,36 +91,40 @@ const MobileMenu = () => (
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
+  const router = useRouter();
 
   return (
-    <nav className={tw(`bg-white`)}>
-      <div className={tw(`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`)}>
-        <div className={tw(`flex items-center justify-between h-24`)}>
-          <div className={tw(`flex items-center`)}>
+    <nav className={tw(`bg-[#38B89A08]`)}>
+      <div className={tw(`max-w-7xl mx-auto px-4 sm:px-2`)}>
+        <div className={tw(`flex items-center justify-between`)}>
+          <div className={tw(`flex items-start justify-between w-full mt-10`)}>
             <div className={tw(`flex-shrink-0`)}>
               <img className={tw(`h-20 w-20`)} src="muftiLogo.svg" alt="logo" width={48} height={48} />
             </div>
-            <div className={tw(`hidden md:block`)}>
-              <div className={tw(`ml-10 flex items-baseline space-x-4`)}>
-                {links.map((link: Link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className={tw(
-                      `text-gray-500 hover:text-gray-600 px-3 py-2 rounded-md font-medium hover:text-green-300`,
-                    )}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+            <div className="flex">
+              <div className={tw(`hidden md:block`)}>
+                <div className={tw(`ml-10 flex items-baseline space-x-4`)}>
+                  {links.map((link: Link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className={tw(
+                        `text-gray-500 hover:text-gray-600 px-3 py-2 rounded-md font-medium hover:text-green-300`,
+                      )}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
-          </div>
-          <div className={tw(`hidden md:block`)}>
-            <div className={tw(`ml-4 flex items-center md:ml-6`)}>
-              {/* <Button primary modifier="rounded-full px-6 py-2" onClick={() => window.location.href = '/contactus'}>Contact US</Button> */}
-              <Button primary modifier="rounded-full px-6 py-2">Contact US</Button>
-
+              <div className={tw(`hidden md:block`)}>
+                <div className={tw(`ml-4 flex items-center md:ml-6`)}>
+                  {/* <Button primary modifier="rounded-full px-6 py-2" onClick={() => window.location.href = '/contactus'}>Contact US</Button> */}
+                  <Button className="rounded-full" onClick={() => router.push('/contactus')}>
+                    Contact US
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
           <div className={tw(`-mr-2 flex md:hidden`)}>

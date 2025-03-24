@@ -1,5 +1,6 @@
 import { tw } from 'twind';
 import Particles from 'react-tsparticles';
+import Text from '../UI/Text';
 
 const ParticleBg = () => (
   <Particles
@@ -62,20 +63,34 @@ const articles = [
 
 const CasesSection = () => (
   <section id="question">
-    <div className={tw(`w-full min-h-screen bg-teal-50 relative`)}>
+    <div className={tw(`w-full bg-[#F9FDFC] relative`)}>
       <div className={tw(`absolute left-0 top-0 h-screen w-full overflow-hidden`)}>
         <ParticleBg />
       </div>
       <div className={tw(`max-w-7xl mx-4 lg:mx-auto pt-20 lg:pt-30`)}>
-        <h1 className={tw(`text-dark text-3xl lg:text-6xl font-bold text-center`)}>
-          Recently Posted
-          <span style={{ color: '#38b89a' }}>Questions</span>
-        </h1>
-        <p className={tw(`text-white text-gray-400 text-center text-xl mt-12`)}>
-          Connect with experts, ask questions, and expand your knowedge effortlessly. Engage with the community, share
-          opinions, and track the expiration of discussions effortlessly.
-        </p>
-        <div className={tw(`mx-auto pt-24`)}>
+        <div className="flex justify-center w-full ">
+          <div>
+            <Text as="h2" className={tw(`text-dark text-center`)}>
+              Recently Posted
+              <span style={{ color: '#38b89a' }}> Questions</span>
+            </Text>
+            <div
+              className={tw(`
+  flex
+  items-center
+  justify-center
+  mx-auto
+  text-center
+`)}
+            >
+              <Text className={tw(`text-center mt-4 text-[16px] sm:text-[18px] max-w-2xl`)}>
+                Connect with experts, ask questions, and expand your knowedge effortlessly. Engage with the community,
+                share opinions, and track the expiration of discussions effortlessly.
+              </Text>
+            </div>
+          </div>
+        </div>
+        <div className={tw(`mx-auto mt-10`)}>
           <div className={tw(`w-full flex flex-wrap justify-around`)}>
             {articles.map((article) => (
               <div
@@ -85,7 +100,7 @@ const CasesSection = () => (
                       xl:max-w-sm lg:w-1/2 w-11/12 mx-auto sm:mx-0 cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`,
                 )}
               >
-                <div className={tw(`h-96 z-20`)}>
+                <div className={tw(`z-20`)}>
                   <img
                     src={article.image}
                     alt={article.alt}
