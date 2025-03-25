@@ -44,8 +44,8 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyles = 'font-sans font-medium py-2 px-4 border rounded-md text-[14px]';
 
   const variants: Record<'filled' | 'outlined', string> = {
-    filled: 'bg-teal-500 text-white border-teal-500 hover:bg-teal-500',
-    outlined: 'bg-white text-gray-600 border-gray-300 hover:bg-gray-100',
+    filled: 'bg-teal-500 text-white border-teal-500 hover:bg-teal-600',
+    outlined: 'bg-white text-[#38B89A] border-teal-500',
   };
 
   return (

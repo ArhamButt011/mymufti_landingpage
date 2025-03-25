@@ -7,9 +7,7 @@ import VideoSection from '@/components/video-section';
 import AppFeaturesShowcase from '@/components/AppFeatureShowcase';
 import PublicReviewSection from '@/components/PublicReview';
 import ListSection from '@/components/list-section';
-import FeatureSection from '@/components/feature-section';
 import CasesSection from '@/components/cases-section';
-import SocialProof from '@/components/social-proof';
 import PricingTable from '@/components/pricing-table';
 import Footer from '@/components/footer';
 
