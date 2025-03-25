@@ -89,7 +89,7 @@ const Footer = () => (
                     info@mymufti.com
                   </a>
                 </li>
-                <li className={tw(`flex text-[#78827F] text-base font-medium leading-6 mb-3`)}>
+                <li className={tw(`flex text-[#78827F] space-x-2 text-base font-medium leading-6 mb-3`)}>
                   <img src={'/images/location.svg'} alt="img" className={tw(`w-4 h-4 mt-1`)} />
                   <p className={tw(`m-0 p-0 max-w-xs`)}>House no 424, J3 block phase 2 johar town Lahore</p>
                 </li>
