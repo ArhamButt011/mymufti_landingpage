@@ -24,11 +24,11 @@ export default function Home() {
         <TrustedSourceSection />
         <VideoSection />
         <AppFeaturesShowcase />
-        <PublicReviewSection />
+        {/* <PublicReviewSection /> */}
         {/* Frequently asked questions */}
-        <ListSection />
+        {/* <ListSection /> */}
         {/* recenty posted questions */}
-        <CasesSection />
+        {/* <CasesSection /> */}
         <PricingTable />
       </main>
       <Footer />

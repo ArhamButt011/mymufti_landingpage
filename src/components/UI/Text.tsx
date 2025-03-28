@@ -37,12 +37,25 @@ const Text = forwardRef<HTMLHeadingElement | HTMLParagraphElement, Props>((props
     return (
       <h3
         ref={ref}
-        className={cn('font-sans font-bold text-[26px] sm:text-[32px] leading-[43px]', className)}
+        className={cn('font-sans font-bold text-[19.05px] sm:text-[32px] ', className)}
         id={id}
         onClick={onClick}
       >
         {children}
       </h3>
+    );
+  }
+
+  if (as === 'h4') {
+    return (
+      <h4
+        ref={ref}
+        className={cn('font-sans font-semibold text-[19px] sm:text-[22px]', className)}
+        id={id}
+        onClick={onClick}
+      >
+        {children}
+      </h4>
     );
   }
 

@@ -18,17 +18,18 @@ const links = [
     label: `Home`,
     href: `#home`,
   },
+  // {
+  //   label: `Scholars`,
+  //   href: `#scholars`,
+  // },
+
   {
-    label: `Scholars`,
-    href: `#scholars`,
+    label: `Blogs`,
+    href: `/blogs`,
   },
   {
-    label: `FAQs`,
-    href: `#faqs`,
-  },
-  {
-    label: `Question`,
-    href: `#question`,
+    label: `FAQ's`,
+    href: `/faqs`,
   },
 ];
 

@@ -20,7 +20,7 @@ const aboutLinks = [
 const resourceLinks = [`About US`, `Contact US`, `Privacy Policy`, `Terms and Conditions`];
 
 const Footer = () => (
-  <footer className={tw(`bg-[#F9FDFC] pt-14 pb-4`)}>
+  <footer className={tw(`bg-[white] pt-14 pb-4 sm:px-8`)}>
     <div className={tw(`mx-auto text-gray-400 px-8 lg:px-0`)}>
       <div className={tw(`w-full mb-5`)}>
         <ul className={tw(`flex flex-col md:flex-row justify-between mx-auto max-w-7xl`)}>
@@ -56,7 +56,13 @@ const Footer = () => (
               <ul>
                 {/* {resourceLinks.map((link) => ( */}
                 <li className={tw(`text-[#78827F] text-base font-medium mb-3`)}>
-                  <Link href="#">About Us</Link>
+                  <Link href="/">Home</Link>
+                </li>
+                <li className={tw(`text-[#78827F] text-base font-medium mb-3`)}>
+                  <Link href="/blogs">Blogs</Link>
+                </li>
+                <li className={tw(`text-[#78827F] text-base font-medium mb-3`)}>
+                  <Link href="/faqs">FAQ's</Link>
                 </li>
                 <li className={tw(`text-[#78827F] text-base font-medium mb-3`)}>
                   <Link href="/contactus">Contact Us</Link>
