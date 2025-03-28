@@ -51,7 +51,7 @@ const AppFeaturesShowcase = () => {
 
   return (
     <div className={tw(`py-20 bg-white`)}>
-      <div className={tw(`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`)}>
+      <div className={tw(`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10`)}>
         <div className={tw(`flex flex-col lg:flex-row gap-20`)}>
           {/* Left side - Feature list */}
           <div className={tw(`lg:w-1/2 mt-10`)}>

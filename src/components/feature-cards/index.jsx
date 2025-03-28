@@ -10,16 +10,16 @@ const FeatureCards = () => {
           {/* Card 1: Book Appointments */}
           <div className={tw(`bg-[#E5F6F2] rounded-3xl p-6 md:p-8 relative overflow-hidden min-h-[250px] md:min-h-0`)}>
             <div className={tw(`relative z-10`)}>
-              <Text as="h3" className={tw(`mb-1 max-w-[70%]  md:max-w-md`)}>
+              <Text as="h3" className={tw(`mb-1 max-w-[85%] sm:max-w-md`)}>
                 Book <span className={tw(`text-teal-500`)}>Appointments</span> with Life Coach & Scholar
               </Text>
               <Text className={tw(`mb-4 md:mb-6 text-[14px] md:text-[16px]  max-w-[70%] md:max-w-sm`)}>
                 Fostering a deeper understanding of Islamic wisdom through this insightful exploration. Join us on a
                 journey of enriched spiritual insights.
               </Text>
-              <Button primary modifier="px-6 py-2 text-sm">
+              {/* <Button primary modifier="px-6 py-2 text-sm">
                 Explore
-              </Button>
+              </Button> */}
             </div>
             {/* Decorative curved shape - positioned to touch bottom and right */}
             <div className={tw(`absolute bottom-0 right-0 w-40 md:w-90`)}>
@@ -44,11 +44,11 @@ const FeatureCards = () => {
                   Engage in live question-and-answer sessions for personalized guidance and advice.
                 </Text>
               </div>
-              <div className="mt-auto">
+              {/* <div className="mt-auto">
                 <Button primary modifier="px-6 py-2 text-sm">
                   Ask Questions
                 </Button>
-              </div>
+              </div> */}
             </div>
 
             {/* Decorative pattern - positioned to touch bottom and right */}
@@ -72,24 +72,24 @@ const FeatureCards = () => {
             >
               <div className={tw(`relative z-10 max-w-[100%] flex flex-col justify-between h-full`)}>
                 <div>
-                  <Text as="h3" className={tw(`font-bold mb-1`)}>
-                    Are You a Scholar? <span className={tw(`text-teal-500`)}>Join Us!</span>
+                  <Text as="h3" className={tw(`font-bold mb-1 mb-1 max-w-[90%] md:max-w-xs`)}>
+                    Are You a Scholar/LifeCoach? <span className={tw(`text-teal-500`)}>Join Us!</span>
                   </Text>
-                  <Text className={tw(`text-gray-600 text-[14px] sm:text-[16px] mb-4 md:mb-6`)}>
+                  <Text className={tw(`text-gray-600 text-[14px] sm:text-[16px] mb-4 md:mb-6 max-w-[80%] md:max-w-xs`)}>
                     Are you a qualified Islamic scholar? Join Mumuti and help Muslims worldwide by providing authentic
                     andreliable guidance. Simply add your details to become part of our trusted network and assist those
                     seeking knowledge.
                   </Text>
                 </div>
                 <div className="mt-auto">
-                  <Button primary modifier="px-6 py-2 text-sm">
+                  {/* <Button primary modifier="px-6 py-2 text-sm">
                     Learn More
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
 
               {/* Decorative Round Image - positioned to touch bottom and right */}
-              <div className={tw(`absolute bottom-0 right-0 w-32 md:w-100`)}>
+              <div className={tw(`absolute bottom-0 right-0 w-[67%] md:w-100`)}>
                 <img
                   src="/images/round.svg"
                   alt="Decorative Element"
