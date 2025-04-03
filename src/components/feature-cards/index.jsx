@@ -8,7 +8,11 @@ const FeatureCards = () => {
       <div className={tw(`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`)}>
         <div className={tw(`grid grid-cols-1 md:grid-cols-2 gap-6`)}>
           {/* Card 1: Book Appointments */}
-          <div className={tw(`bg-[#E5F6F2] rounded-3xl p-6 md:p-8 relative overflow-hidden min-h-[250px] md:min-h-0`)}>
+          <div
+            className={tw(
+              `bg-[#E5F6F2] rounded-3xl p-6 md:p-8 relative overflow-hidden min-h-[250px] md:min-h-[378px]`,
+            )}
+          >
             <div className={tw(`relative z-10`)}>
               <Text as="h3" className={tw(`mb-1 max-w-[85%] sm:max-w-md`)}>
                 Book <span className={tw(`text-teal-500`)}>Appointments</span> with Life Coach & Scholar
@@ -22,7 +26,7 @@ const FeatureCards = () => {
               </Button> */}
             </div>
             {/* Decorative curved shape - positioned to touch bottom and right */}
-            <div className={tw(`absolute bottom-0 right-0 w-40 md:w-90`)}>
+            <div className={tw(`absolute bottom-0 right-0 w-40 md:w-1/2`)}>
               <img
                 src="/images/bookappointment.svg"
                 alt="Image Error"
@@ -33,7 +37,11 @@ const FeatureCards = () => {
           </div>
 
           {/* Card 2: Interactive Q&A */}
-          <div className={tw(`bg-[#E5F6F2] rounded-3xl p-6 md:p-8 relative overflow-hidden min-h-[250px] md:min-h-0`)}>
+          <div
+            className={tw(
+              `bg-[#E5F6F2] rounded-3xl p-6 md:p-8 relative overflow-hidden min-h-[250px] md:min-h-[378px]`,
+            )}
+          >
             <div className={tw(`relative z-10 flex flex-col justify-between h-full`)}>
               <div>
                 <Text as="h3" className={tw(`font-bold mb-1 max-w-[70%] md:max-w-xs`)}>
@@ -52,7 +60,7 @@ const FeatureCards = () => {
             </div>
 
             {/* Decorative pattern - positioned to touch bottom and right */}
-            <div className={tw(`absolute bottom-0 right-0 w-40 md:w-50`)}>
+            <div className={tw(`absolute bottom-0 right-0 w-40 md:w-1/2`)}>
               <img
                 src="/images/zigzag.svg"
                 alt="Interactive Q&A"
@@ -72,10 +80,10 @@ const FeatureCards = () => {
             >
               <div className={tw(`relative z-10 max-w-[100%] flex flex-col justify-between h-full`)}>
                 <div>
-                  <Text as="h3" className={tw(`font-bold mb-1 mb-1 max-w-[90%] md:max-w-xs`)}>
+                  <Text as="h3" className={tw(`font-bold mb-1 mb-1 md:max-w-xs`)}>
                     Are You a Scholar/LifeCoach? <span className={tw(`text-teal-500`)}>Join Us!</span>
                   </Text>
-                  <Text className={tw(`text-gray-600 text-[14px] sm:text-[16px] mb-4 md:mb-6 max-w-[80%] md:max-w-xs`)}>
+                  <Text className={tw(`text-gray-600 mb-4 md:mb-6 max-w-[80%] md:max-w-xs`)}>
                     Are you a qualified Islamic scholar? Join Mumuti and help Muslims worldwide by providing authentic
                     andreliable guidance. Simply add your details to become part of our trusted network and assist those
                     seeking knowledge.
@@ -93,7 +101,7 @@ const FeatureCards = () => {
                 <img
                   src="/images/round.svg"
                   alt="Decorative Element"
-                  className={tw(`w-full h-auto object-contain`)}
+                  className={tw(`w-full h-auto object-contain rounded-br-3xl`)}
                   style={{ display: 'block' }}
                 />
               </div>

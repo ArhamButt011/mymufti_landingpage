@@ -33,7 +33,7 @@ const Header = () => {
               <br />
               By Verified Scholars
             </Text>
-            <Text className={tw(`mt-4`)}>
+            <Text as="p1" className={tw(`mt-4`)}>
               Explore Islamic knowledge via private or public questions, and connect with verified scholars through
               personal appointments. Get guidance on diverse topics, and gain insightful support on your journey of
               learning and understanding.
@@ -76,13 +76,7 @@ const Header = () => {
   
 `)}
           >
-            <Text className={tw(`px-4 hidden sm:block text-center text-[16px] sm:text-[18px]`)}>
-              Our platform offers direct access to esteemed scholars for private consultations, <br />
-              fosters open dialogue through public discussions, keeps you updated on Islamic <br />
-              events, and facilitates convenient appointments.
-            </Text>
-
-            <Text className={tw(`px-4  block md:hidden text-center text-[16px] sm:text-[18px]`)}>
+            <Text as="p1" className={tw(`px-4  text-center w-full mx-auto max-w-3xl`)}>
               Our platform offers direct access to esteemed scholars for private consultations, fosters open dialogue
               through public discussions, keeps you updated on Islamic events, and facilitates convenient appointments.
             </Text>
