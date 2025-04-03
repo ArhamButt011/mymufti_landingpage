@@ -18,11 +18,13 @@ const Header = () => {
   return (
     <header className={tw(headerStyle)}>
       <div
-        className={tw(`max-w-7xl mx-auto flex flex-col md:flex-row items-center px-4 sm:px-6 lg:px-6 md:mt-0 mt-10`)}
+        className={tw(
+          `max-w-7xl mx-auto flex flex-col md:flex-row items-center px-4 sm:px-6 lg:px-6 md:mt-0 md:mt-10 mt-0`,
+        )}
         id="home"
       >
         {/* Left Text Content */}
-        <div className={tw(`md:w-1/2 text-left`)}>
+        <div className={tw(`md:w-1/2 text-left mt-10`)}>
           <Text as="h1">
             <span style={{ color: '#38b89a' }}>Solution</span> for All Your{' '}
             <span style={{ color: '#38b89a' }}>Islamic Queries</span>
@@ -40,15 +42,26 @@ const Header = () => {
             </Text>
           </div>
           <div className={tw(`mt-8 flex items-center`)}>
-            <Button className="w-[170px] rounded-xl" onClick={() => setIsOpen(true)}>
+            <Button className="w-[170px] rounded-xl z-10" onClick={() => setIsOpen(true)}>
               Explore
             </Button>
           </div>
         </div>
 
         {/* Right Image Content */}
-        <div className={tw(`w-full h-full md:w-1/2 mt-10 md:mt-0 flex justify-center md:justify-end`)}>
-          <img src="/images/phones.svg" alt="MyMufti App Screenshots" className={tw(`w-full h-auto object-cover`)} />
+        <div className={tw(`w-full h-full md:w-4/5 flex md:justify-end z-10 overflow-hidden`)}>
+          <img
+            src="/images/phones.svg"
+            alt="MyMufti App Screenshots"
+            className={tw(`w-full h-auto hidden md:block max-h-[700px] object-cover object-top md:mt-[-100px]`)}
+          />
+        </div>
+        <div className="max-h-[570px]">
+          <img
+            src="/images/phonesmall.svg"
+            alt="MyMufti App Screenshots"
+            className={tw(`w-full h-auto block md:hidden object-contain mt-[-50px]`)}
+          />
         </div>
       </div>
 
@@ -84,8 +97,16 @@ const Header = () => {
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={onClose} buttonContent="">
-        <div className="mt-4">
+        <div className="mt-4 flex justify-between items-start">
           <img className={tw(`h-20 w-20`)} src="muftiLogo.svg" alt="logo" width={48} height={48} />
+          <Image
+            className="cursor-pointer"
+            src={'/images/blackCross.svg'}
+            height={30}
+            width={30}
+            alt="cross"
+            onClick={() => onClose()}
+          />
         </div>
         <div className="flex gap-2">
           <div className="w-full max-w-sm">
@@ -106,13 +127,13 @@ const Header = () => {
                 Experience appointment booking, expert guidance, and event management—right at your fingertips.
               </Text>
             </div>
-            <div className="flex gap-2 mt-4">
+            <div className="flex gap-2 mt-10">
               <div>
                 <a href="https://play.google.com/store/apps/details?id=com.mlbranch.mymufti&hl=en">
                   {/* <Image width={120} height={120} src={'/images/playstore.svg'} alt="playstore" /> */}
                   <svg
                     width="150"
-                    height="50"
+                    height="44"
                     viewBox="0 0 253 77"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +163,7 @@ const Header = () => {
                   {/* <Image width={120} height={120} src={'/images/appstore.svg'} alt="appstore" /> */}
                   <svg
                     width="150"
-                    height="50"
+                    height="44"
                     viewBox="0 0 254 77"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"

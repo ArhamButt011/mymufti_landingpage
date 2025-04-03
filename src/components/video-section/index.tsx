@@ -9,8 +9,8 @@ const VideoSection = () => (
           Our <span style={{ color: '#38b89a' }}>Scholars</span>
         </Text>
         <Text className={tw(`mt-2 text-gray-600 max-w-3xl text-[16px] sm:text-[18px]`)}>
-          verify all our scholars and their credentials. Only the best from reputable madrasas and universities are
-          selected to ensure authentic and reliable Islamic guidance.
+          We vet and verify all our scholars and their credentials. Only the best from reputable madrasas and
+          universities are selected to ensure authentic and reliable Islamic guidance.
         </Text>
       </div>
 

@@ -20,9 +20,14 @@ const Modal = ({ isOpen, onClose, children, buttonContent }: ModalProps) => {
       // Clicking outside should close modal
     >
       <div
-        style={{ backgroundImage: "url('/images/modal-bg.png')" }}
-        className="bg-white w-full md:max-w-[700px] max-w-[350px] rounded-2xl md:px-6 p-4 shadow-lg relative h-[53vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
+        style={{
+          backgroundImage: "url('/images/modal-bg.png')",
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+        className="bg-white w-full md:max-w-[700px] max-w-[350px] rounded-2xl md:px-6 p-4 shadow-lg relative h-[70vh] overflow-y-auto custom-scrollbar"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button className="absolute top-5 right-4 text-gray-500 hover:text-black" onClick={onClose}>

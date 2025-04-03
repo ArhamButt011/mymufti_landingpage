@@ -107,7 +107,7 @@ const Footer = () => (
       </div>
       <hr />
       <div className={tw(`mx-auto max-w-7xl mt-4`)}>
-        <div className="flex md:flex-row flex-col md:gap-0 gap-6 justify-between">
+        <div className="flex md:flex-row flex-col md:gap-0 gap-6 justify-between items-center">
           <div>
             <Text>Copyright @ Mymuftisupport.com</Text>
           </div>
