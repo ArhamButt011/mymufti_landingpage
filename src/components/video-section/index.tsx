@@ -9,8 +9,8 @@ const VideoSection = () => (
           Our <span style={{ color: '#38b89a' }}>Scholars</span>
         </Text>
         <Text className={tw(`mt-2 text-gray-600 max-w-3xl text-[16px] sm:text-[18px]`)}>
-          We vet and verify all our scholars and their credentials. Only the best from reputable madrasas and
-          universities are selected to ensure authentic and reliable Islamic guidance.
+          verify all our scholars and their credentials. Only the best from reputable madrasas and universities are
+          selected to ensure authentic and reliable Islamic guidance.
         </Text>
       </div>
 
@@ -30,7 +30,7 @@ const VideoSection = () => (
       </div>
 
       <div className={tw(`mt-4`)}>
-        <div className="w-full mx-auto max-w-[300px]">
+        <div className="w-full mx-auto max-w-[240px]">
           <div className="mb-14 mt-12">
             <div>
               <img src="/images/Mufti1.svg" alt="Our Islamic Scholars" className={tw(`w-full h-auto rounded-lg`)} />

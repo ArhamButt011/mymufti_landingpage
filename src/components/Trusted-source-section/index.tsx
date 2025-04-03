@@ -22,14 +22,14 @@ const TrustedSourceSection = () => {
               support you — all from the privacy of your home.
             </Text>
 
-            <p className={tw(`font-medium mb-6 text-[16px] sm:text-[18px] `)}>
+            <Text as="p1" className={tw(`font-medium mb-6 text-[16px] sm:text-[18px] text-[#000000]`)}>
               We're on a mission to make Islamic knowledge accessible to every corner of the world. But we can't do it
               alone, help Muslims worldwide — donate now and support our cause!
-            </p>
+            </Text>
 
-            <p className={tw(`text-gray-600`)}>
+            <Text>
               Together, we can break down barriers to knowledge and bring the light of understanding to every heart.
-            </p>
+            </Text>
           </div>
         </div>
 
@@ -53,8 +53,10 @@ const TrustedSourceSection = () => {
                 />
               </svg>
             </div>
-            <h3 className={tw(`text-lg font-bold mb-2`)}>Ask Anything, Anytime</h3>
-            <Text className={tw(`text-gray-600`)}>Get precise, reliable answers to your questions.</Text>
+            <Text as="h3" className={tw(`mb-2`)}>
+              Ask Anything, Anytime
+            </Text>
+            <Text>Get precise, reliable answers to your questions.</Text>
           </div>
 
           {/* Card 2: Connect with Verified Scholars */}
@@ -69,8 +71,10 @@ const TrustedSourceSection = () => {
                 <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
               </svg>
             </div>
-            <h3 className={tw(`text-lg font-bold mb-2`)}>Connect with Verified Scholars</h3>
-            <p className={tw(`text-gray-600 text-sm`)}>Receive guidance from knowledgeable, trusted experts.</p>
+            <Text as="h3" className={tw(`text-lg font-bold mb-2`)}>
+              Connect with Verified Scholars
+            </Text>
+            <Text>Receive guidance from knowledgeable, trusted experts.</Text>
           </div>
 
           {/* Card 3: Learn in Privacy and Comfort */}
@@ -89,8 +93,10 @@ const TrustedSourceSection = () => {
                 />
               </svg>
             </div>
-            <h3 className={tw(`text-lg font-bold mb-2`)}>Learn in Privacy and Comfort</h3>
-            <p className={tw(`text-gray-600 text-sm`)}>Explore your faith without judgment or barriers.</p>
+            <Text as="h3" className={tw(`mb-2`)}>
+              Learn in Privacy and Comfort
+            </Text>
+            <Text>Explore your faith without judgment or barriers.</Text>
           </div>
         </div>
       </div>

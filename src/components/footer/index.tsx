@@ -107,20 +107,34 @@ const Footer = () => (
       </div>
       <hr />
       <div className={tw(`mx-auto max-w-7xl mt-4`)}>
-        <div className="flex justify-between">
-          <div>Copyright @ Mymuftisupport.com</div>
+        <div className="flex md:flex-row flex-col md:gap-0 gap-6 justify-between">
+          <div>
+            <Text>Copyright @ Mymuftisupport.com</Text>
+          </div>
           <div className="flex items-center gap-3">
             <Link href="#">
-              <Image width={22} height={22} src={'/images/facebook.svg'} alt="fb" />
+              <Image width={22} height={22} src={'/images/facebook.svg'} alt="fb" className="md:w-8 md:h-8 h-5 w-5" />
             </Link>
             <Link href="#">
-              <Image width={22} height={22} src={'/images/twitter.svg'} alt="twitter" />
+              <Image
+                width={22}
+                height={22}
+                src={'/images/twitter.svg'}
+                alt="twitter"
+                className="md:w-8 md:h-8 h-5 w-5"
+              />
             </Link>
             <Link href="#">
-              <Image width={22} height={22} src={'/images/google.svg'} alt="google" />
+              <Image width={22} height={22} src={'/images/google.svg'} alt="google" className="md:w-8 md:h-8 h-5 w-5" />
             </Link>
             <Link href="#">
-              <Image width={22} height={22} src={'/images/instagram.svg'} alt="insta" />
+              <Image
+                width={22}
+                height={22}
+                src={'/images/instagram.svg'}
+                alt="insta"
+                className="md:w-8 md:h-8 h-5 w-5"
+              />
             </Link>
           </div>
         </div>
