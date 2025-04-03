@@ -3,6 +3,7 @@ import Text from '../UI/Text';
 import Modal from '../UI/Modal';
 import { useState } from 'react';
 import Image from 'next/image';
+import Button from '../button';
 
 const PricingTable = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,20 +22,23 @@ const PricingTable = () => {
               <Text className={tw(`text-base leading-6 mb-8 text-[#FFFFFFA6]`)}>
                 Start now by downloading the app and create your account on My Mufti with 2 steps
               </Text>
-              <button
-                className={tw(
-                  `bg-white text-teal-500 border-teal-500 rounded-full font-medium py-2 px-4 hover:bg-teal-500 hover:border-slate-100 hover:text-cyan-50`,
-                )}
-                onClick={() => setIsOpen(true)}
-              >
+              <Button variant="outlined" className={tw(`rounded-full`)} onClick={() => setIsOpen(true)}>
                 Get Started
-              </button>
+              </Button>
             </div>
           </div>
         </div>
         <Modal isOpen={isOpen} onClose={onClose} buttonContent="">
-          <div className="mt-4">
+          <div className="mt-4 flex justify-between items-start">
             <img className={tw(`h-20 w-20`)} src="muftiLogo.svg" alt="logo" width={48} height={48} />
+            <Image
+              className="cursor-pointer"
+              src={'/images/blackCross.svg'}
+              height={30}
+              width={30}
+              alt="cross"
+              onClick={() => onClose()}
+            />
           </div>
           <div className="flex gap-2">
             <div className="w-full max-w-sm">
@@ -55,13 +59,13 @@ const PricingTable = () => {
                   Experience appointment booking, expert guidance, and event management—right at your fingertips.
                 </Text>
               </div>
-              <div className="flex gap-2 mt-4">
+              <div className="flex gap-2 mt-10">
                 <div>
                   <a href="https://play.google.com/store/apps/details?id=com.mlbranch.mymufti&hl=en">
                     {/* <Image width={120} height={120} src={'/images/playstore.svg'} alt="playstore" /> */}
                     <svg
                       width="150"
-                      height="50"
+                      height="42"
                       viewBox="0 0 253 77"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +95,7 @@ const PricingTable = () => {
                     {/* <Image width={120} height={120} src={'/images/appstore.svg'} alt="appstore" /> */}
                     <svg
                       width="150"
-                      height="50"
+                      height="42"
                       viewBox="0 0 254 77"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"

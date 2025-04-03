@@ -109,9 +109,7 @@ const Navigation = () => {
                     <a
                       key={link.label}
                       href={link.href}
-                      className={tw(
-                        `text-gray-500 hover:text-gray-600 px-3 py-2 rounded-md font-medium hover:text-green-300`,
-                      )}
+                      className={tw(`text-[#14201B] px-3 py-2 rounded-md font-normal hover:text-secondary`)}
                     >
                       {link.label}
                     </a>
@@ -122,7 +120,7 @@ const Navigation = () => {
                 <div className={tw(`ml-4 flex items-center md:ml-6`)}>
                   {/* <Button primary modifier="rounded-full px-6 py-2" onClick={() => window.location.href = '/contactus'}>Contact US</Button> */}
                   <Button className="rounded-full" onClick={() => router.push('/contactus')}>
-                    Contact US
+                    Contact Us
                   </Button>
                 </div>
               </div>

@@ -37,7 +37,7 @@ const Text = forwardRef<HTMLHeadingElement | HTMLParagraphElement, Props>((props
     return (
       <h3
         ref={ref}
-        className={cn('font-sans font-bold text-[19.05px] xl:text-[32px] ', className)}
+        className={cn('font-sans font-bold text-[19.05px] md:text-[32px] ', className)}
         id={id}
         onClick={onClick}
       >

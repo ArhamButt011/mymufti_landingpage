@@ -26,9 +26,8 @@ const AppFeaturesShowcase = () => {
     {
       id: 3,
       number: '03',
-      title: 'Post Questions',
-      description:
-        'Join live Q&A sessions, ask your questions, post your question by selecting your Fiqa and question category and get feedback from everyone.',
+      title: 'Create Events',
+      description: 'Post your question by selecting your Fiqa and question category and get feedback from everyone.',
       images: ['/images/question-screen.svg'],
     },
     {
@@ -36,7 +35,7 @@ const AppFeaturesShowcase = () => {
       number: '04',
       title: 'Book An Appointment',
       description:
-        'Book your personal appointment by selecting scholar of your own choice and discuss your Islamic questions personally.',
+        'Book your personal appointment with scholar/Life Coach or discuss your islamic questions personally.',
       images: ['/images/appointment-screen.svg'],
     },
     {
@@ -44,7 +43,7 @@ const AppFeaturesShowcase = () => {
       number: '05',
       title: 'Are you a scholar? Join Us!',
       description:
-        'Are you a Muslim Scholar or Life Coach? Join us! Together we can help and coach muslims around the world.',
+        'Are you a Muslim Scholar or Life Coach? Join us? Together we can help and coach muslims around the world.',
       images: ['/images/scholar-screen.svg'],
     },
   ];
@@ -66,7 +65,15 @@ const AppFeaturesShowcase = () => {
                   )}
                   onClick={() => setActiveFeature(feature.id)}
                 >
-                  <span className={tw(`text-sm font-medium text-gray-400 mr-4 mt-1`)}>{feature.number}</span>
+                  <span
+                    className={tw(
+                      `text-sm font-medium mr-4 mt-1 ${
+                        activeFeature === feature.id ? 'text-teal-500' : 'text-gray-700'
+                      }`,
+                    )}
+                  >
+                    {feature.number}
+                  </span>
                   <div>
                     <h3
                       className={tw(

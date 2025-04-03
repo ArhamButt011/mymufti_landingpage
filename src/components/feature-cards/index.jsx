@@ -1,5 +1,5 @@
 import { tw } from 'twind';
-import Button from '@/components/button';
+
 import Text from '../UI/Text';
 
 const FeatureCards = () => {
@@ -48,7 +48,7 @@ const FeatureCards = () => {
                   Interactive
                   <br /> <span className={tw(`text-teal-500`)}>Q&A</span> Sessions
                 </Text>
-                <Text className={tw(`text-gray-600 text-[14px] sm:text-[16px] max-w-[70%] md:max-w-xs mb-4 md:mb-6`)}>
+                <Text className={tw(` max-w-[70%] md:max-w-xs mb-4 md:mb-6`)}>
                   Engage in live question-and-answer sessions for personalized guidance and advice.
                 </Text>
               </div>
@@ -80,13 +80,13 @@ const FeatureCards = () => {
             >
               <div className={tw(`relative z-10 max-w-[100%] flex flex-col justify-between h-full`)}>
                 <div>
-                  <Text as="h3" className={tw(`font-bold mb-1 mb-1 md:max-w-xs`)}>
-                    Are You a Scholar/LifeCoach? <span className={tw(`text-teal-500`)}>Join Us!</span>
+                  <Text as="h3" className={tw(`font-bold mb-1 mb-1 md:max-w-xl`)}>
+                    Are You a Scholar/ LifeCoach? <span className={tw(`text-teal-500`)}>Join Us!</span>
                   </Text>
-                  <Text className={tw(`text-gray-600 mb-4 md:mb-6 max-w-[80%] md:max-w-xs`)}>
-                    Are you a qualified Islamic scholar? Join Mumuti and help Muslims worldwide by providing authentic
-                    andreliable guidance. Simply add your details to become part of our trusted network and assist those
-                    seeking knowledge.
+                  <Text className={tw(`mb-4 md:mb-6 max-w-[80%] md:max-w-xs`)}>
+                    Are you a qualified Islamic scholar? Join My Mufti and help Muslims worldwide by providing authentic
+                    and reliable guidance. Simply add your details to become part of our trusted network and assist
+                    those seeking knowledge.
                   </Text>
                 </div>
                 <div className="mt-auto">
@@ -97,7 +97,7 @@ const FeatureCards = () => {
               </div>
 
               {/* Decorative Round Image - positioned to touch bottom and right */}
-              <div className={tw(`absolute bottom-0 right-0 w-[67%] md:w-100`)}>
+              <div className={tw(`absolute bottom-0 right-0 w-[67%] md:w-4/6`)}>
                 <img
                   src="/images/round.svg"
                   alt="Decorative Element"
@@ -108,7 +108,7 @@ const FeatureCards = () => {
             </div>
 
             {/* Right Card: Scholar Meeting Image (Wider) */}
-            <div className={tw(`bg-white rounded-3xl overflow-hidden md:col-span-2 h-[250px] md:h-auto`)}>
+            <div className={tw(`bg-white rounded-3xl overflow-hidden md:col-span-2 h-[250px] md:h-[378px]`)}>
               <img
                 src="/images/scholars-meeting.svg"
                 alt="Scholars Meeting"
