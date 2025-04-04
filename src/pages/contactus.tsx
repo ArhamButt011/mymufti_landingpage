@@ -29,7 +29,7 @@ const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
+    // console.log('Form submitted:', formData);
     alert('Thank you for your message. We will get back to you soon!');
     // Reset form
     setFormData({
@@ -90,7 +90,7 @@ const ContactUs = () => {
             </div>
 
             {/* Right side - Form */}
-            <div className={tw(`w-full md:w-1/2`)}>
+            <div className={tw(`w-full md:w-1/2 mt-5`)}>
               <form onSubmit={handleSubmit} className={tw(`space-y-6`)}>
                 <div>
                   <Label htmlFor="name">Name</Label>
@@ -103,7 +103,7 @@ const ContactUs = () => {
                     placeholder="John Doe"
                     required
                     className={tw(
-                      `w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent`,
+                      `w-full px-2 md:px-4 py-2 sm:text-sm text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent`,
                     )}
                   />
                 </div>
@@ -119,17 +119,19 @@ const ContactUs = () => {
                     placeholder="user@gmail.com"
                     required
                     className={tw(
-                      `w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent`,
+                      `w-full px-2 md:px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent sm:text-sm text-xs`,
                     )}
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="phone">Phone number</Label>
-                  <div className={tw(`flex`)}>
+                  <div className={tw(`flex w-full`)}>
                     <select
                       className={tw(
-                        `inline-flex items-center px-3 py-2 border border-r-0 border-gray-300 bg-gray-50 text-gray-700 rounded-l-md focus:ring-2 focus:ring-teal-500 focus:outline-none`,
+                        `px-1 py-1 md:px-3 md:py-2 border border-r-0 border-gray-300 bg-gray-50 text-gray-700 
+         rounded-l-md focus:ring-2 focus:ring-teal-500 focus:outline-none 
+         w-17 md:w-20 sm:text-sm text-xs`,
                       )}
                       value={formData.countryCode || '+1'}
                       onChange={(e) => setFormData((prev) => ({ ...prev, countryCode: e.target.value }))}
@@ -155,6 +157,7 @@ const ContactUs = () => {
                       <option value="+64">+64</option>
                       <option value="+31">+31</option>
                     </select>
+
                     <input
                       type="tel"
                       id="phone"
@@ -163,7 +166,8 @@ const ContactUs = () => {
                       onChange={handleChange}
                       placeholder="0000000000"
                       className={tw(
-                        `flex-1 px-4 py-2 border border-gray-300 focus:outline-none rounded-r-md focus:ring-2 focus:ring-teal-500 focus:border-transparent`,
+                        `flex-1 px-2  md:px-4 py-2 border border-gray-300 
+         focus:outline-none rounded-r-md focus:ring-2 focus:ring-teal-500 focus:border-transparent sm:text-sm text-xs`,
                       )}
                     />
                   </div>
@@ -182,7 +186,7 @@ const ContactUs = () => {
                     rows={5}
                     required
                     className={tw(
-                      `w-full px-4 py-2 border border-gray-300 focus:outline-none rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent`,
+                      `w-full px-2 py-1 md:px-4 md:py-2 border border-gray-300 focus:outline-none rounded-md focus:ring-2 focus:ring-teal-500 focus:border-transparent sm:text-sm text-xs`,
                     )}
                   />
                 </div>
