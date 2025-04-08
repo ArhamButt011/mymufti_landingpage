@@ -26,7 +26,7 @@ const Modal = ({ isOpen, onClose, children, buttonContent }: ModalProps) => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
-        className="bg-white w-full md:max-w-[700px] max-w-[350px] rounded-2xl md:px-6 p-4 shadow-lg relative h-[70vh] overflow-y-auto custom-scrollbar"
+        className="bg-white w-full md:max-w-[800px] max-w-[350px] rounded-2xl md:px-6 p-4 shadow-lg relative min-h-[50vh] md:min-h-[62vh] overflow-y-auto custom-scrollbar"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
