@@ -16,7 +16,7 @@ const BlogDetails = () => {
    if (!mounted) return null;
   return (
     <DefaultLayout>
-      <BlogDetailLayout title="What is the Difference between Sunni and Shia?" imageUrl="/images/blog/FastInRamadan.svg">
+      <BlogDetailLayout title="What is the Difference between Sunni and Shia?" imageUrl="/images/blog/shiaSunni.svg">
       <div className="flex items-center space-x-1 mb-2 text-gray-500 text-sm">
       <Clock className="w-4 h-4" />
       <span>May 22, 2025</span>
