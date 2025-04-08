@@ -13,7 +13,7 @@ const AppFeaturesShowcase = () => {
       number: '01',
       title: 'Download My Mufti App',
       description: 'Download our app now to unlock a world of Islamic knowledge at your fingertips.',
-      images: ['/images/app-screen.svg'],
+      images: ['/images/app-screens.svg'],
     },
     {
       id: 2,
@@ -21,13 +21,13 @@ const AppFeaturesShowcase = () => {
       title: 'Create An Account',
       description:
         'Your account is your gateway to enriching your understanding of Islam. Generte an account now and get solution of your questions',
-      images: ['/images/account-screen.svg'],
+      images: ['/images/account-screens.svg'],
     },
     {
       id: 3,
       number: '03',
       title: 'Create Events',
-      description: 'Post your question by selecting your Fiqa and question category and get feedback from everyone.',
+      description: 'Post your question by selecting your Fiqa and question category and get feedback from scholars.',
       images: ['/images/question-screen.svg'],
     },
     {
@@ -119,7 +119,7 @@ const AppFeaturesShowcase = () => {
                         className={tw(
                           `absolute ${
                             positions[index] || 'md:left-0 md:bottom-0'
-                          } md:w-full w-[250px] h-auto transform transition-all duration-500`,
+                          } md:w-full md:h-[600px] w-[250px] h-auto transform transition-all duration-500`,
                           'sm:relative sm:w-[250px] sm:mx-auto', // Ensuring centering on small screens
                         )}
                       >

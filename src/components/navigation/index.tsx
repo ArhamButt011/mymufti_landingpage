@@ -2,6 +2,7 @@ import { tw } from 'twind';
 import { useState } from 'react';
 import Button from '@/components/button';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 interface IMenuButton {
   toggleMenu: React.MouseEventHandler<HTMLButtonElement>;
@@ -16,7 +17,7 @@ type Link = {
 const links = [
   {
     label: `Home`,
-    href: `#home`,
+    href: `/`,
   },
   // {
   //   label: `Scholars`,
@@ -72,22 +73,33 @@ const MenuButton = ({ toggleMenu, showMenu }: IMenuButton) => (
   </button>
 );
 
-const MobileMenu = () => (
-  <div className={tw(`md:hidden`)}>
-    <div className={tw(`px-2 pt-2 pb-3 space-y-1 sm:px-3`)}>
-      {links.map((link) => (
-        <a
-          href={link.href}
-          className={tw(`text-gray-500 block px-3 py-2 text-base font-medium 
+const MobileMenu = () => {
+  const router = useRouter();
+  return (
+    <div className={tw(`md:hidden`)}>
+      <div className={tw(`px-2 pt-2 pb-3 space-y-1 sm:px-3`)}>
+        {links.map((link) => (
+          <Link
+            href={link.href}
+            className={tw(`text-gray-500 block px-3 py-2 text-base font-medium 
           hover:text-white hover:bg-teal-500 rounded`)}
-          key={link.label}
-        >
-          {link.label}
-        </a>
-      ))}
+            key={link.label}
+          >
+            {link.label}
+          </Link>
+        ))}
+        <div className={tw(`md:hidden`)}>
+          <div className={tw(`ml-2 flex items-center md:ml-6`)}>
+            {/* <Button primary modifier="rounded-full px-6 py-2" onClick={() => window.location.href = '/contactus'}>Contact US</Button> */}
+            <Button className="rounded-full" onClick={() => router.push('/contactus')}>
+              Contact Us
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false);

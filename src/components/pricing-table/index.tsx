@@ -40,32 +40,35 @@ const PricingTable = () => {
               onClick={() => onClose()}
             />
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 md:flex-row flex-col md:gap-0 gap-8">
             <div className="w-full max-w-sm">
-              <Text as="h3" className="font-semibold mt-6">
-                Download
-              </Text>
-              <Text as="h2" className="text-[#38b89a]">
-                My Mufti App
-              </Text>
-              <Text as="h3" className="font-semibold">
-                Now!!
-              </Text>
-              <Text as="h4" className="mt-3">
-                Download the App to Explore All Features!{' '}
-              </Text>
-              <div className="max-w-xs mt-3">
-                <Text>
-                  Experience appointment booking, expert guidance, and event management—right at your fingertips.
+              <div>
+                <Text as="h3" className="font-semibold mt-6">
+                  Download
                 </Text>
+                <Text as="h2" className="text-[#38b89a]">
+                  My Mufti App
+                </Text>
+                <Text as="h3" className="font-semibold">
+                  Now!!
+                </Text>
+                <Text as="h4" className="mt-3">
+                  Download the App to Explore All Features!{' '}
+                </Text>
+                <div className="max-w-xs mt-3">
+                  <Text>
+                    Experience appointment booking, expert guidance, and event management—right at your fingertips.
+                  </Text>
+                </div>
               </div>
-              <div className="flex gap-2 mt-10">
+              <div className="flex gap-1 md:gap-2 mt-10">
                 <div>
                   <a href="https://play.google.com/store/apps/details?id=com.mlbranch.mymufti&hl=en">
                     {/* <Image width={120} height={120} src={'/images/playstore.svg'} alt="playstore" /> */}
                     <svg
-                      width="150"
-                      height="42"
+                      className=" md:w-[130px]
+                    md:h-[42px] w-[120px]
+                    h-[34px]"
                       viewBox="0 0 253 77"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -94,8 +97,9 @@ const PricingTable = () => {
                   <a href="https://apps.apple.com/pk/app/my-mufti/id6446103667">
                     {/* <Image width={120} height={120} src={'/images/appstore.svg'} alt="appstore" /> */}
                     <svg
-                      width="150"
-                      height="42"
+                      className=" md:w-[130px]
+                    md:h-[42px] w-[120px]
+                    h-[34px]"
                       viewBox="0 0 254 77"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -129,8 +133,14 @@ const PricingTable = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <Image width={260} height={250} src={'/images/question-screen.svg'} alt="appImage" />
+            <div className="mx-auto md:mx-0">
+              <Image
+                width={600}
+                height={500}
+                className="w-[400px] h-[330px] md:w-[600px] md:h-[500px]"
+                src={'/images/question-screen.svg'}
+                alt="appImage"
+              />
             </div>
           </div>
         </Modal>
