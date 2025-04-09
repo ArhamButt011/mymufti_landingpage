@@ -27,7 +27,7 @@ const Footer = () => (
           <li className={tw(`mb-5`)}>
             <div>
               <div className={tw(`mb-5 w-full`)}>
-                <img className={tw(`h-20 w-20`)} src="./images/footerIcon.svg" alt="logo" height={40} width={40} />
+                <img className={tw(`h-20 w-20`)} src="/images/footerIcon.svg" alt="logo" height={40} width={40} />
               </div>
               <Text className="max-w-xs">
                 Explore our app for personalized guidance from scholars, engaging discussions, and convenient

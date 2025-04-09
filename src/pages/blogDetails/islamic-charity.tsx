@@ -18,7 +18,7 @@ const IslamicCharity = () => {
    if (!mounted) return null;
   return (
     <DefaultLayout>
-      <BlogDetailLayout title="What Does Islam Teach About Charity?" imageUrl="/images/blog/halalFood.svg">
+      <BlogDetailLayout title="What Does Islam Teach About Charity?" imageUrl="/images/blog/charity.png">
       <div className="flex items-center space-x-1 mb-2 text-gray-500 text-sm">
       <Clock className="w-4 h-4" />
       <span>Aug 30, 2025</span>

@@ -112,7 +112,7 @@ const Navigation = () => {
         <div className={tw(`flex items-center justify-between`)}>
           <div className={tw(`flex items-start justify-between w-full mt-10`)}>
             <div className={tw(`flex-shrink-0`)}>
-              <img className={tw(`h-20 w-20`)} src="muftiLogo.svg" alt="logo" width={48} height={48} />
+              <img className={tw(`h-20 w-20`)} src="/muftiLogo.svg" alt="logo" width={48} height={48} />
             </div>
             <div className="flex">
               <div className={tw(`hidden md:block`)}>

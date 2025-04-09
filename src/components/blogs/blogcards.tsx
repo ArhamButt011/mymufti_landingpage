@@ -1,10 +1,14 @@
 'use client';
+import { useState, useMemo } from 'react';
 import Text from '@/components/UI/Text';
-import type React from 'react';
-import { useState } from 'react';
 import Image from 'next/image';
 import Pagination from '@/components/blogs/Pagination';
 import Link from 'next/link';
+
+// Props
+interface BlogCardsProps {
+  searchTerm: string;
+}
 
 // Blog card type
 interface BlogCardProps {
@@ -34,12 +38,12 @@ const blogCardsData: BlogCardProps[] = [
   {
     imageUrl: '/images/blog/ProphetMuhammad.svg',
     date: '10 Apr 2025',
-    title: 'Who was the Prophet Muhammad?',
+    title: 'Who was the Prophet Muhammad (SAW)?',
     description: 'Exploring the life and teachings of Prophet Muhammad...',
     link: '/blogDetails/prophet-muhammad',
   },
   {
-    imageUrl: '/images/blog/halalFood.svg',
+    imageUrl: '/images/blog/shiaSunni.svg',
     date: '22 May 2025',
     title: 'What is the Difference Between Sunni and Shia?',
     description: 'Understanding different sects in Islam...',
@@ -74,7 +78,7 @@ const blogCardsData: BlogCardProps[] = [
     link: '/blogDetails/women-in-islam',
   },
   {
-    imageUrl: '/images/blog/halalFood.svg',
+    imageUrl: '/images/blog/charity.png',
     date: '25 Oct 2025',
     title: "Islam's Teachings About Charity",
     description: 'The importance of charity in Islam...',
@@ -118,15 +122,23 @@ const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, date, title, description,
   );
 };
 
-// Blog Cards Container with Pagination
-const BlogCards: React.FC = () => {
+// Blog Cards Container with Search & Pagination
+const BlogCards: React.FC<BlogCardsProps> = ({ searchTerm }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 10;
+  const cardsPerPage = 9;
 
-  const totalPages = Math.ceil(blogCardsData.length / cardsPerPage);
+  // Filtered list based on search
+  const filteredBlogs = useMemo(() => {
+    return blogCardsData.filter((card) =>
+      card.title.toLowerCase().includes((searchTerm || '').toLowerCase()) ||
+      card.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [searchTerm]);
+
+  const totalPages = Math.ceil(filteredBlogs.length / cardsPerPage);
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = blogCardsData.slice(indexOfFirstCard, indexOfLastCard);
+  const currentCards = filteredBlogs.slice(indexOfFirstCard, indexOfLastCard);
 
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -140,22 +152,29 @@ const BlogCards: React.FC = () => {
     <section id="blog-cards-section" className="container mx-auto px-4 py-12">
       <div className="relative ml-1 mr-1 bg-[#5F6A6714]">
         <div className="relative ml-4 mr-4 mt-4 mb-4 bg-[##5F6A6714] pt-10 pl-6 pr-6 pb-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {currentCards.map((card, index) => (
-              <BlogCard
-                key={`${currentPage}-${index}`}
-                imageUrl={card.imageUrl}
-                date={card.date}
-                title={card.title}
-                description={card.description}
-                link={card.link}
-              />
-            ))}
-          </div>
-
-          {/* Pagination */}
-          {blogCardsData.length > cardsPerPage && (
-            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+          {currentCards.length > 0 ? (
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {currentCards.map((card, index) => (
+                  <BlogCard
+                    key={`${currentPage}-${index}`}
+                    imageUrl={card.imageUrl}
+                    date={card.date}
+                    title={card.title}
+                    description={card.description}
+                    link={card.link}
+                  />
+                ))}
+              </div>
+              {/* Pagination */}
+              {filteredBlogs.length > cardsPerPage && (
+                <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+              )}
+            </>
+          ) : (
+            <div className="text-center text-gray-500 text-xl font-semibold">
+              No blogs match your search.
+            </div>
           )}
         </div>
       </div>

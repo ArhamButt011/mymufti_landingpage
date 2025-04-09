@@ -16,13 +16,13 @@ const BlogDetails = () => {
     if (!mounted) return null;
   return (
     <DefaultLayout>
-      <BlogDetailLayout title="Who was the prophet Muhammad?" imageUrl="/images/blog/ProphetMuhammad.svg">
+      <BlogDetailLayout title="Who was the prophet Muhammad (SAW)?" imageUrl="/images/blog/ProphetMuhammad.svg">
       <div className="flex items-center space-x-1 mb-2 text-gray-500 text-sm">
       <Clock className="w-4 h-4" />
       <span>Apr 10, 2025</span>
     </div>
         <Text className="font-Raleway font-[700] text-[48px] leading-[123%] mb-6" as="h3">
-          Who was the prophet Muhammad?
+          Who was the prophet Muhammad (SAW)?
         </Text>
 
         <Text className="font-Raleway font-[500] text-[#78827F] text-[32px]" as="p">
