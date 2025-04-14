@@ -1,26 +1,3 @@
-// import { tw } from 'twind';
-
-// interface IButton {
-//   primary?: boolean;
-//   children: React.ReactNode;
-//   modifier?: string;
-// }
-
-// const Button = ({ primary, modifier, children, ...rest }: IButton) => {
-//   const baseStyle = `font-sans font-medium py-2 px-4 border rounded`;
-//   const styles = primary
-//     ? `bg-teal-500 text-white border-teal-500 hover:bg-teal-500`
-//     : `bg-white text-gray-600 border-gray-300 hover:bg-gray-100`;
-
-//   return (
-//     <button type="button" className={tw(`${baseStyle} ${styles} ${modifier ?? ``}`)} {...rest}>
-//       {children}
-//     </button>
-//   );
-// };
-
-// export default Button;
-
 import React from 'react';
 import { tw } from 'twind';
 
@@ -41,18 +18,29 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   disabled = false,
 }) => {
-  const baseStyles = 'font-sans font-medium py-2 px-4 border rounded-md text-[14px]';
+  const baseStyles = `
+    font-sans font-medium py-2 px-4 border rounded-md text-[14px]
+    outline-none focus:outline-none focus:ring-0 active:outline-none active:ring-0
+    transition-transform duration-200 ease-in-out transform hover:scale-105
+  `;
 
   const variants: Record<'filled' | 'outlined', string> = {
-    filled: 'bg-[#38B89A] text-white border-[#38B89A] hover:bg-[#38B89A]',
-    outlined: 'bg-white text-[#38B89A] border-teal-500 hover:bg-[#38B89A08] hover:text-white',
+    filled:
+      'bg-[#38B89A] text-white border-[#38B89A] hover:bg-[#38B89A]',
+    outlined:
+      'bg-white text-[#38B89A] border-teal-500 hover:bg-[#38B89A] hover:text-white',
   };
 
   return (
     <button
       type={type}
       onClick={onClick}
-      className={tw(`${baseStyles} ${variants[variant]} ${className} ${disabled && 'opacity-50 cursor-not-allowed'}`)}
+      disabled={disabled}
+      className={tw(
+        `${baseStyles} ${variants[variant]} ${className} ${
+          disabled ? 'opacity-50 cursor-not-allowed' : ''
+        }`
+      )}
     >
       {children}
     </button>

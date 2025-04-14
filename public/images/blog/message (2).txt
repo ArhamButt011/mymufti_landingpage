@@ -1,0 +1,102 @@
+"use client"
+
+import { useState } from "react"
+import Image from "next/image"
+
+interface BlogPost {
+  id: number
+  date: string
+  title: string
+  excerpt: string
+  imageUrl: string
+  hasReadMore?: boolean
+}
+
+export default function RecentBlogs() {
+  const [blogPosts] = useState<BlogPost[]>([
+    {
+      id: 1,
+      date: "Apr 19, 2024",
+      title: "Understanding the Five Pillars of Islam",
+      excerpt: "A beginner friendly guide to the foundational principles of Islam.",
+      imageUrl: "/placeholder.svg?height=80&width=80",
+      hasReadMore: true,
+    },
+    {
+      id: 2,
+      date: "Apr 18, 2024",
+      title: "The Role of Women in Islam: Debunking",
+      excerpt: "Discover the rights, roles, and respect Islam grants women. ",
+      imageUrl: "/placeholder.svg?height=80&width=80",
+      hasReadMore: true,
+    },
+    {
+      id: 3,
+      date: "Apr 17, 2024",
+      title: "How to Strengthen Your Connection with Allah",
+      excerpt: "Tips and practical steps to deepen your spiritual relations.",
+      imageUrl: "/placeholder.svg?height=80&width=80",
+      hasReadMore: true,
+    },
+    {
+      id: 4,
+      date: "Apr 16, 2024",
+      title: "The Beauty of Patience in Islam",
+      excerpt: "Explore how patience (Sabr) is emphasized in the Quran and S...",
+      imageUrl: "/placeholder.svg?height=80&width=80",
+      hasReadMore: true,
+    },
+    {
+      id: 5,
+      date: "Apr 15, 2024",
+      title: "Islamic Perspectives on Mental Health",
+      excerpt: "A beginner friendly guide to the Islamic perspective of Islam.",
+      imageUrl: "/placeholder.svg?height=80&width=80",
+      hasReadMore: true,
+    },
+    {
+      id: 6,
+      date: "Apr 14, 2024",
+      title: "A Guide for Modern Times",
+      excerpt: "A beginner friendly guide to the foundational principles of Islam.",
+      imageUrl: "/placeholder.svg?height=80&width=80",
+      hasReadMore: true,
+    },
+  ])
+
+  const handleReadMore = (id: number) => {
+    console.log(`Read more clicked for blog post ${id}`)
+    // Here you would typically navigate to the blog post detail page
+  }
+
+  return (
+    <div className="bg-gray-100 p-6 rounded-lg font-raleway">
+      <h2 className="text-2xl font-bold mb-4">Recent Blogs</h2>
+      <div className="space-y-3">
+        {blogPosts.map((post) => (
+          <div key={post.id} className="bg-white p-3 rounded-lg flex gap-3">
+            <div className="flex-shrink-0">
+              <Image
+                src={post.imageUrl || "/placeholder.svg"}
+                alt={post.title}
+                width={80}
+                height={80}
+                className="rounded-md object-cover"
+              />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs text-gray-500 mb-1">{post.date}</p>
+              <h3 className="font-semibold text-gray-900 mb-1">{post.title}</h3>
+              <p className="text-sm text-gray-600 mb-1">{post.excerpt}</p>
+              {post.hasReadMore && (
+                <button onClick={() => handleReadMore(post.id)} className="text-sm text-teal-500 hover:text-teal-600">
+                  Read More
+                </button>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}

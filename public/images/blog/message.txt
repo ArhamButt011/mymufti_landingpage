@@ -1,0 +1,95 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import { ArrowRight, HelpCircle } from "lucide-react"
+
+interface Question {
+  id: number
+  text: string
+}
+
+export default function MostAskedQuestions() {
+  const [questions, setQuestions] = useState<Question[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        setIsLoading(true)
+        // Replace with your actual API endpoint
+        const response = await fetch("/api/questions")
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch questions")
+        }
+
+        const data = await response.json()
+        setQuestions(data)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "An error occurred")
+        console.error("Error fetching questions:", err)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchQuestions()
+  }, [])
+
+  const handleQuestionClick = (id: number) => {
+    console.log(`Question ${id} clicked`)
+    // Here you would typically navigate to the question detail page
+    // or open a modal with the answer
+  }
+
+  if (error) {
+    return (
+      <div className="bg-gray-100 p-6 rounded-lg font-raleway">
+        <h2 className="text-2xl font-bold mb-4">Most Asked Questions</h2>
+        <div className="p-4 bg-red-50 text-red-500 rounded-md">Error loading questions: {error}</div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="bg-gray-100 p-6 rounded-lg font-raleway">
+      <h2 className="text-2xl font-bold mb-4">Most Asked Questions</h2>
+      <div className="space-y-3">
+        {isLoading ? (
+          // Custom loading skeletons
+          Array(5)
+            .fill(0)
+            .map((_, index) => (
+              <div key={`skeleton-${index}`} className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-gray-200 animate-pulse"></div>
+                  <div className="h-5 w-full bg-gray-200 rounded animate-pulse"></div>
+                </div>
+              </div>
+            ))
+        ) : questions.length > 0 ? (
+          // Custom question cards
+          questions.map((question) => (
+            <div
+              key={question.id}
+              className="bg-white p-4 rounded-lg shadow-sm flex items-center justify-between cursor-pointer hover:shadow-md transition-shadow"
+              onClick={() => handleQuestionClick(question.id)}
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                  <HelpCircle className="w-6 h-6 text-gray-500" />
+                </div>
+                <p className="text-sm md:text-base">{question.text}</p>
+              </div>
+              <ArrowRight className="w-5 h-5 text-emerald-500 flex-shrink-0 stroke-[1.5] rotate-[270deg]" />
+            </div>
+          ))
+        ) : (
+          // No questions found
+          <div className="p-4 text-center text-gray-500 bg-white rounded-lg">No questions available</div>
+        )}
+      </div>
+    </div>
+  )
+}

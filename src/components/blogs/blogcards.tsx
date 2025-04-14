@@ -1,22 +1,23 @@
-'use client';
-import { useState, useMemo } from 'react';
-import Text from '@/components/UI/Text';
-import Image from 'next/image';
-import Pagination from '@/components/blogs/Pagination';
-import Link from 'next/link';
+'use client'
 
-// Props
+import { useState, useMemo } from 'react'
+import Text from '@/components/UI/Text'
+import Image from 'next/image'
+import Pagination from '@/components/blogs/Pagination'
+import Link from 'next/link'
+
 interface BlogCardsProps {
-  searchTerm: string;
+  searchTerm: string
+  layout?: '1xN' | '3x3' // Optional layout prop
 }
 
-// Blog card type
 interface BlogCardProps {
-  imageUrl: string;
-  date: string;
-  title: string;
-  description: string;
-  link: string;
+  imageUrl: string
+  date: string
+  title: string
+  description: string
+  link: string
+  priority?: boolean
 }
 
 // Blog data
@@ -91,10 +92,17 @@ const blogCardsData: BlogCardProps[] = [
     description: 'The core beliefs of Islam...',
     link: '/blogDetails/five-pillars',
   },
-];
+]
 
 // Blog Card Component
-const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, date, title, description, link }) => {
+const BlogCard: React.FC<BlogCardProps> = ({
+  imageUrl,
+  date,
+  title,
+  description,
+  link,
+  priority = false,
+}) => {
   return (
     <div className="group h-[460px] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md flex flex-col">
       <div className="relative w-full h-[250px]">
@@ -102,6 +110,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, date, title, description,
           src={imageUrl || '/placeholder.svg'}
           alt={title}
           fill
+          priority={priority}
+          loading={priority ? 'eager' : 'lazy'}
           className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-t-[20px]"
         />
       </div>
@@ -113,48 +123,56 @@ const BlogCard: React.FC<BlogCardProps> = ({ imageUrl, date, title, description,
         >
           {title}
         </Text>
-        <Text className="line-clamp-3 font-700 font-Raleway text-[24px] flex-1 ">{description}</Text>
+        <Text className="line-clamp-3 font-700 font-Raleway text-[24px] flex-1">
+          {description}
+        </Text>
         <Link href={link}>
-          <button className="text-[#38B89A] hover:underline transition-colors font-medium mt-auto">Read More</button>
+          <button className="text-[#38B89A] hover:underline transition-colors font-medium mt-auto">
+            Read More
+          </button>
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-// Blog Cards Container with Search & Pagination
-const BlogCards: React.FC<BlogCardsProps> = ({ searchTerm }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 9;
+// Blog Cards Container
+const BlogCards: React.FC<BlogCardsProps> = ({ searchTerm, layout = '3x3' }) => {
+  const [currentPage, setCurrentPage] = useState(1)
+  const cardsPerPage = 9
 
-  // Filtered list based on search
   const filteredBlogs = useMemo(() => {
     return blogCardsData.filter((card) =>
-      card.title.toLowerCase().includes((searchTerm || '').toLowerCase()) ||
+      card.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       card.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }, [searchTerm]);
+    )
+  }, [searchTerm])
 
-  const totalPages = Math.ceil(filteredBlogs.length / cardsPerPage);
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = filteredBlogs.slice(indexOfFirstCard, indexOfLastCard);
+  const totalPages = Math.ceil(filteredBlogs.length / cardsPerPage)
+  const indexOfLastCard = currentPage * cardsPerPage
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage
+  const currentCards = filteredBlogs.slice(indexOfFirstCard, indexOfLastCard)
 
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
     window.scrollTo({
       top: document.getElementById('blog-cards-section')?.offsetTop || 0,
       behavior: 'smooth',
-    });
-  };
+    })
+  }
+
+  const gridClass =
+    layout === '1xN'
+      ? 'grid-cols-1'
+      : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
 
   return (
     <section id="blog-cards-section" className="container mx-auto px-4 py-12">
       <div className="relative ml-1 mr-1 bg-[#5F6A6714]">
-        <div className="relative ml-4 mr-4 mt-4 mb-4 bg-[##5F6A6714] pt-10 pl-6 pr-6 pb-6">
+        <div className="relative ml-4 mr-4 mt-4 mb-4 pt-10 pl-6 pr-6 pb-6">
           {currentCards.length > 0 ? (
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className={`grid ${gridClass} gap-6`}>
                 {currentCards.map((card, index) => (
                   <BlogCard
                     key={`${currentPage}-${index}`}
@@ -163,10 +181,10 @@ const BlogCards: React.FC<BlogCardsProps> = ({ searchTerm }) => {
                     title={card.title}
                     description={card.description}
                     link={card.link}
+                    priority={true}
                   />
                 ))}
               </div>
-              {/* Pagination */}
               {filteredBlogs.length > cardsPerPage && (
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
               )}
@@ -179,7 +197,7 @@ const BlogCards: React.FC<BlogCardsProps> = ({ searchTerm }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default BlogCards;
+export default BlogCards

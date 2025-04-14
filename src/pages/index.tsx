@@ -11,6 +11,7 @@ import CasesSection from '@/components/cases-section';
 import PricingTable from '@/components/pricing-table';
 import Footer from '@/components/footer';
 
+
 export default function Home() {
   return (
     <Page>
