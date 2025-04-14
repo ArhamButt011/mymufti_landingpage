@@ -68,10 +68,10 @@ const Footer = () => (
                   <Link href="/contactus">Contact Us</Link>
                 </li>
                 <li className={tw(`text-[#78827F] text-base font-medium mb-3`)}>
-                  <Link href="#">Privacy Policy</Link>
+                  <Link href="/PrivacyPolicy">Privacy Policy</Link>
                 </li>
                 <li className={tw(`text-[#78827F] text-base font-medium mb-3`)}>
-                  <Link href="#">Terms and Conditions</Link>
+                  <Link href="/Terms&Conditions">Terms and Conditions</Link>
                 </li>
                 {/* ))} */}
               </ul>

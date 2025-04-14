@@ -9,7 +9,7 @@ const Blogs = () => {
   return (
     <DefaultLayout>
       <Hero searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> 
-      <BlogCards searchTerm={searchTerm} />
+      <BlogCards searchTerm={searchTerm} layout="3x3" />
     </DefaultLayout>
   );
 };
