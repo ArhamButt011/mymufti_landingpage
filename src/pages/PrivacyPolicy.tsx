@@ -8,11 +8,11 @@ export default function TermsAndConditions() {
         <div className="flex flex-col items-center text-center mb-8">
           <Text
             as="h1"
-            className="font-['DM_Sans'] font-bold text-[24px] sm:text-[36px] md:text-[52px] leading-tight mb-4"
+            className="font-Raleway font-bold text-[24px] sm:text-[36px] md:text-[52px] leading-tight mb-4"
           >
             <span className="text-emerald-500">Privacy</span> Policy
           </Text>
-          <Text as="p" className="font-['DM_Sans'] sm:text-[15px] md:text-[22px] text-[#555]">
+          <Text as="p" className="font-Raleway sm:text-[15px] md:text-[22px] text-[#555]">
             Welcome to My Mufti App. We are committed to protecting your privacy and providing a safe online environment
             for users of our services. This Privacy Policy outline show we collect, use, disclose, and manage your
             personal information when you use our App. By accessing or using the App, you agree to the terms of this
@@ -86,11 +86,11 @@ export default function TermsAndConditions() {
             <div key={index}>
               <Text
                 as="h3"
-                className="font-['DM_Sans'] font-semibold text-[#3A3A3A] text-[16px] sm:text-[20px] md:text-[22px] mb-2"
+                className="font-Raleway font-semibold text-[#3A3A3A] text-[16px] sm:text-[20px] md:text-[22px] mb-2"
               >
                 {item.title}
               </Text>
-              <Text className="font-['DM_Sans'] font-normal text-[14px] sm:text-[16px] md:text-[18px] text-[#4A4A4A]">
+              <Text className="font-Raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] text-[#4A4A4A]">
                 {item.body}
               </Text>
             </div>
