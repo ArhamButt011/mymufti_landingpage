@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import FaqHero from '@/components/Faqs/FaqHero';
 import FaqContent from '@/components/Faqs/FaqContent';
 import DefaultLayout from '@/components/Layout/DefaultLayout';
-import BlogCards from '@/components/blogs/blogcards';
 
 const FaqsPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-
   return (
     <DefaultLayout>
-      <FaqHero searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-                <FaqContent />
+      <FaqHero />
+      <FaqContent />
+      <FaqHero />
+      <FaqContent />
     </DefaultLayout>
   );
 };

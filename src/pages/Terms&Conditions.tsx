@@ -8,13 +8,13 @@ export default function TermsAndConditions() {
         <div className="flex flex-col items-center text-center mb-8">
           <Text
             as="h1"
-            className="font-Raleway font-bold text-[24px] sm:text-[36px] md:text-[52px] leading-tight mb-4"
+            className="font-['DM_Sans'] font-bold text-[24px] sm:text-[36px] md:text-[52px] leading-tight mb-4"
           >
             <span className="text-emerald-500">Terms</span> and Conditions
           </Text>
           <Text
             as="p"
-            className="font-Raleway sm:text-[15px] md:text-[22px] text-[#555]"
+            className="font-['DM_Sans'] sm:text-[15px] md:text-[22px] text-[#555]"
           >
             Welcome to the My Multi App! Before you start using our services, please take a moment to read and
             understand the following terms and conditions. By accessing the app, you agree to be bound by these terms.
@@ -52,11 +52,11 @@ export default function TermsAndConditions() {
             <div key={index}>
               <Text
                 as="h3"
-                className="font-Raleway font-semibold text-[#3A3A3A] text-[16px] sm:text-[20px] md:text-[22px] mb-2"
+                className="font-['DM_Sans'] font-semibold text-[#3A3A3A] text-[16px] sm:text-[20px] md:text-[22px] mb-2"
               >
                 {item.title}
               </Text>
-              <Text className="font-Raleway font-normal text-[14px] sm:text-[16px] md:text-[18px] text-[#4A4A4A]">
+              <Text className="font-['DM_Sans'] font-normal text-[14px] sm:text-[16px] md:text-[18px] text-[#4A4A4A]">
                 {item.body}
               </Text>
             </div>

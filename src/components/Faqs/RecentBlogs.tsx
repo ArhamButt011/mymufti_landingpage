@@ -20,43 +20,44 @@ export default function RecentBlogs() {
       date: '28 Feb 2025',
       title: 'How Muslims Keep Fast in Ramadan',
       description: 'Fasting during Ramadan is one of the Five Pillars of Islam...',
-      link: '/blogDetails/fast-in-ramadan',
+      link: '/blogs/how-muslims-keep-fast-in-ramadan',
     },
     {
       imageUrl: '/images/blog/RoleOfZakat.svg',
       date: '15 Mar 2025',
       title: 'What is Zakat in Islam?',
       description: 'Zakat is an abstract obligation from the Five Pillars of Islam...',
-      link: '/blogDetails/zakat-in-islam',
+      link: '/blogs/what-is-zakat-in-islam',
     },
     {
       imageUrl: '/images/blog/ProphetMuhammad.svg',
       date: '10 Apr 2025',
       title: 'Who was the Prophet Muhammad (SAW)?',
       description: 'Exploring the life and teachings of Prophet Muhammad...',
-      link: '/blogDetails/prophet-muhammad',
+      link: '/blogs/who-was-the-prophet-muhammad-saw',
     },
     {
       imageUrl: '/images/blog/shiaSunni.svg',
       date: '22 May 2025',
       title: 'What is the Difference Between Sunni and Shia?',
       description: 'Understanding different sects in Islam...',
-      link: '/blogDetails/sunni-vs-shia',
+      link: '/blogs/difference-between-sunni-and-shia',
     },
     {
       imageUrl: '/images/blog/halalFood.svg',
       date: '05 Jun 2025',
       title: 'What is Halal Food?',
       description: 'Exploring what makes food halal in Islam...',
-      link: '/blogDetails/halal-food',
+      link: '/blogs/what-is-halal-food',
     },
     {
       imageUrl: '/images/blog/kaaba.svg',
       date: '18 Jul 2025',
       title: 'Why is the Kaaba Important?',
       description: 'A look into the significance of the Kaaba...',
-      link: '/blogDetails/significance-of-kaaba',
+      link: '/blogs/why-is-the-significance-of-kaaba-important',
     },
+ 
   ];
 
   return (
