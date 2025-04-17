@@ -24,10 +24,10 @@ const Header = () => {
         id="home"
       >
         {/* Left Text Content */}
-        <div className={tw(`md:w-1/2 text-left mt-10`)}>
+        <div className={tw(`md:w-1/2 w-1280 text-left mt-10 -ml-4`)}>
           <Text as="h1">
             <span style={{ color: '#38b89a' }}>Solution</span> for All Your{' '}
-            <span style={{ color: '#38b89a' }}>Islamic Queries</span>
+            <span style={{ color: '#38b89a' }}>Islamic </span>Queries
           </Text>
           <div>
             <Text className={tw(`mt-6 text-[18px] sm:text-[22px] text-[#000000] font-semibold`)}>

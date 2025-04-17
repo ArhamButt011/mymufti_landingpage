@@ -117,14 +117,14 @@ const BlogCard: React.FC<BlogCardProps> = ({
           />
         </div>
         <div className="p-4 bg-white flex flex-col flex-1 rounded-b-[20px]">
-          <Text className="text-Raleway text-500 text-[14px] text-[#A6A6A6]">{date}</Text>
+          <Text className="text-Raleway text-500 text-[14px] text-[#A6A6A6] mb-2">{date}</Text>
           <Text
             as="h3"
-            className="line-clamp-2 font-[24px] font-500 font-raleway text-[#000000] group-hover:text-500 transition-colors tracking-[0%]"
+            className=" mb-2 line-clamp-2 font-[24px] leading-[1.1] font-500 font-raleway text-[#000000] group-hover:text-500 transition-colors tracking-[0%]"
           >
             {title}
           </Text>
-          <Text className="line-clamp-3 font-700 font-Raleway text-[24px] flex-1">
+          <Text className="line-clamp-4 font-700 font-Raleway text-[24px] flex-1">
             {description}
           </Text>
           <span className="text-[#38B89A] hover:underline transition-colors font-medium mt-auto">

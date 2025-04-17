@@ -47,7 +47,7 @@ const ContactUs = () => {
         <div className={tw(`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 `)}>
           <div className={tw(`text-center mb-12`)}>
             <Text as="h2" className={tw(``)}>
-              Contact <span style={{ color: '#38b89a' }}>Us</span>
+              <span style={{ color: '#38b89a' }}>Contact</span> Us
             </Text>
             <Text className={tw(`mt-4`)}>
               Feel free to contact us any time. We will get back to you as soon as we can.
@@ -55,7 +55,6 @@ const ContactUs = () => {
           </div>
 
           <div className={tw(`flex flex-col md:flex-row items-stretch`)}>
-            {/* Left side - Image */}
             {/* Left side - Image */}
             <div className={tw(`w-full md:w-1/2 self-end`)}>
               <div className={tw(`w-full flex items-center md:justify-end justify-center`)}>

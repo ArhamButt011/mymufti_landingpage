@@ -52,7 +52,7 @@ const Footer = () => (
           </li>
           <li>
             <div>
-              <h4 className={tw(`text-[23px] font-medium mb-8 text-[#000000]`)}>Quick Links</h4>
+              <h4 className={tw(`text-[23px] font-medium mb-4 text-[#000000]`)}>Quick Links</h4>
               <ul>
                 {/* {resourceLinks.map((link) => ( */}
                 <li className={tw(`text-[#78827F] text-base font-medium mb-3`)}>
@@ -79,24 +79,24 @@ const Footer = () => (
           </li>
           <li>
             <div>
-              <h4 className={tw(`text-[23px] font-medium mb-8 text-[#000000]`)}>Need Help?</h4>
+              <h4 className={tw(`text-[23px] font-medium mb-4 text-[#000000]`)}>Need Help?</h4>
               <ul>
                 {/* {aboutLinks.map((linkItem, index) => ( */}
                 <li className={tw(`flex items-center space-x-2 text-[#78827F] text-base font-medium leading-6 mb-3`)}>
-                  <img src={'/images/call.svg'} alt="img" className={tw(`w-4 h-4`)} />
+                  <img src={'/images/call.svg'} alt="img" className={tw(`w-5 h-5`)} />
                   {/* <p className={tw(`m-0 p-0 max-w-xs`)}>+0 (11) 222 333</p> */}
                   <a href="tel:+011222333" className={tw(`m-0 p-0 max-w-xs`)}>
                     +0 (11) 222 333
                   </a>
                 </li>
                 <li className={tw(`flex items-center space-x-2 text-[#78827F] text-base font-medium leading-6 mb-3`)}>
-                  <img src={'/images/message.svg'} alt="img" className={tw(`w-4 h-4`)} />
+                  <img src={'/images/message.svg'} alt="img" className={tw(`w-5 h-5`)} />
                   <a href="mailto:info@mymufti.com" className={tw(`m-0 p-0 max-w-xs`)}>
                     info@mymufti.com
                   </a>
                 </li>
                 <li className={tw(`flex text-[#78827F] space-x-2 text-base font-medium leading-6 mb-3`)}>
-                  <img src={'/images/location.svg'} alt="img" className={tw(`w-4 h-4 mt-1`)} />
+                  <img src={'/images/location.svg'} alt="img" className={tw(`w-5 h-5 mt-[2px]`)} />
                   <p className={tw(`m-0 p-0 max-w-xs`)}>House no 424, J3 block phase 2 johar town Lahore</p>
                 </li>
                 {/* ))} */}

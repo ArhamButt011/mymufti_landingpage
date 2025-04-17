@@ -66,7 +66,7 @@ export default function RecentBlogs() {
           <Link 
             href={post.link} 
             key={index} 
-            className="block bg-white p-3 rounded-lg hover:shadow-md transition-shadow cursor-pointer"
+            className="block bg-white p-3 rounded-md hover:shadow-md transition-shadow cursor-pointer"
           >
             <div className="flex items-stretch gap-3">
               <div className="w-20 h-30 relative flex-shrink-0">
@@ -87,7 +87,7 @@ export default function RecentBlogs() {
                     {post.description}
                   </p>
                 </div>
-                <span className="text-sm text-teal-500 hover:text-teal-600 font-raleway">
+                <span className="text-sm text-teal-500 hover:text-teal-600 hover:underline font-raleway">
                   Read More
                 </span>
               </div>

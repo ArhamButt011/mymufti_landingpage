@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
+import Text from '@/components/UI/Text';
 import BlogDetailLayout from '@/components/blogs/blogDetailsLayout';
 import DefaultLayout from '@/components/Layout/DefaultLayout';
 import blogs from './blogs.json';
@@ -17,9 +18,9 @@ export default function BlogDetailsPage() {
 
   return (
     <DefaultLayout>
-      <div className="container mx-auto px-4 py-6 max-w-4xl">
+      <div className="container mx-auto px-4 py-6 max-w-[1300px]">
         {/* Back Arrow and Heading */}
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center gap-3 mt-6 ml-3 mb-6">
           <button onClick={() => router.back()}>
             <Image
               src="/images/blog/ArrowLeft.svg"
@@ -29,23 +30,21 @@ export default function BlogDetailsPage() {
               className="cursor-pointer"
             />
           </button>
-          <h2 className="text-2xl font-semibold leading-none">Blog Details</h2>
+          <Text as="h3" className="text-xl font-bold leading-none">Blog Details</Text>
         </div>
 
-        <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="max-w-[1262px] mx-auto px-4 py-8">
           {/* Blog Image */}
           <img src={blog.imageUrl} alt={blog.title} className="w-full max-h-[400px] object-cover rounded-xl mb-6" />
 
           {/* Blog Date */}
           <div className="flex items-center space-x-1 mb-2 text-gray-500 text-sm">
             <Clock className="w-4 h-4" />
-            <span>
-              <p className="h-4">{blog.date}</p>
-            </span>
+            <span className="h-4 flex items-center">{blog.date}</span>
           </div>
 
           {/* Blog Title */}
-          <h1 className="md:text-[32px] font-Raleway font-[700] text-[48px] leading-[123%] mb-6">{blog.title}</h1>
+          <Text as="h3" className="md:text-[32px] font-Raleway font-[700] text-[48px] leading-[123%] mb-6">{blog.title}</Text>
 
           {/* Blog Content */}
           {blog.content.map((section, index) => (

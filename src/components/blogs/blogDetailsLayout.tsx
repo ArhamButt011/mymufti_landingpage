@@ -11,10 +11,10 @@ interface BlogDetailLayoutProps {
 
 const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ title, imageUrl, children }) => {
   return (
-    <div className="container mx-auto px-4 py-6 max-w-4xl">
+    <div className="container mx-auto px-4 py-6 max-w-[1262px]">
                   <div className="flex items-center mb-4">
                     <Link href="/blogs" className="inline-block mr-3">
-                      <div className="relative w-8 h-8">
+                      <div className="relative w-8 h-8 ml-4">
                         <Image
                           src="/images/blog/ArrowLeft.svg"
                           alt="Back to blogs"
@@ -25,7 +25,7 @@ const BlogDetailLayout: React.FC<BlogDetailLayoutProps> = ({ title, imageUrl, ch
                         />
                       </div>
                     </Link>
-                    <Text as="h2">Blog Details</Text>
+                    <Text as="h1">Blog Details</Text>
                   </div>
 
                   <div className="bg-white w-full overflow-hidden">

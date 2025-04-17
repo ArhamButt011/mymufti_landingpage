@@ -40,7 +40,7 @@ export function AskQuestion({ isOpen, onClose, onSubmit }: AskQuestionProps) {
         </div>
 
         <div className="mb-4">
-          <Text as="p" className="mb-2 text-sm font-medium text-gray-700">Question Category</Text>
+          <Text as="p" className="mb-2 text-bold text-sm font-medium text-gray-700">Question Category</Text>
           <RadioGroup value={category} onValueChange={setCategory} className="flex gap-6">
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="others" id="others" />
@@ -58,7 +58,7 @@ export function AskQuestion({ isOpen, onClose, onSubmit }: AskQuestionProps) {
         </div>
 
         <div className="mb-6">
-          <Text as="p" className="mb-2 text-sm font-medium text-gray-700">Question</Text>
+          <Text as="p" className="mb-2 text-bold text-sm font-medium text-gray-700">Question</Text>
           <textarea
             placeholder="Write your question in detail..."
             value={question}

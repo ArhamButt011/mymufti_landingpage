@@ -18,7 +18,7 @@ const TrustedSourceSection = () => {
             <Text className={tw(`text-gray-600 mb-6`)}>
               At My Mufti, we believe that every Muslim should have easy access to authentic Islamic knowledge. That's
               why we've created a "free app" that brings verified Islamic scholars right to your fingertips. Whether
-              you're seeking answers to personal questions or guidance on complex matters of faith, My mufti is here to
+              you're seeking answers to personal questions or guidance on complex matters of faith, My Mufti is here to
               support you — all from the privacy of your home.
             </Text>
 
