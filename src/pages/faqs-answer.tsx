@@ -54,30 +54,38 @@ const FaqsAnswerPage = () => {
 
       <div className="max-w-6xl mx-auto p-6">
         {loading ? (
-          <Text className="text-xl text-gray-500">Loading...</Text>
+          <div className="max-w-6xl mx-auto my-8">
+          <div className="border-l-4 border-r-4 border-l-emerald-500 border-r-emerald-500 bg-emerald-50/50 p-6">
+            <p className="text-[30px] text-gray-500 mb-4">Loading...</p>
+          </div>
+        </div>
         ) : errorMessage ? (
-          <Text className="text-xl text-red-500">Error: {errorMessage}</Text>
+          <div className="max-w-6xl mx-auto my-8">
+        <div className="border-l-4 border-r-4 border-l-red-500 border-r-red-500 bg-red-50/50 p-6">
+          <p className="text-[30px] text-gray-500 mb-4">Error: {errorMessage}</p>
+        </div>
+      </div>
         ) : (
           <>
             {/* Question */}
-            <div className="bg-emerald-100 border-l-4 border-emerald-500 p-6 mb-6 rounded-lg shadow">
-              <Text as="h2" className="text-2xl md:text-4xl font-semibold text-emerald-700 mb-2">
+            <div className="border-l-4 border-r-4 border-l-emerald-500 border-r-emerald-500 bg-emerald-50/50 p-6">
+              <Text as="h2" className="text-[26px] md:text-[40px] font-medium text-emerald-600 mb-2">
                 Question
               </Text>
-              <Text as="p" className="text-lg md:text-2xl text-gray-800 mb-1">
+              <Text as="p" className="text-lg md:text-2xl text-gray-800 mb-1text-[16px] md:text-[30px] text-gray-700 mb-4">
                 {questionData?.question}
               </Text>
               <Text className="text-sm text-gray-500">Published On: {questionData?.date}</Text>
             </div>
 
             {/* Answer */}
-            <div className="bg-white border border-gray-200 p-6 rounded-lg shadow">
-              <Text as="h2" className="text-2xl md:text-4xl font-semibold text-emerald-700 mb-4">
+            <div className="p-6" style={{ backgroundColor: '#78827F0F', marginTop: '16px' }}>
+              <Text as="h2" className="text-[26px] md:text-[40px] font-medium text-emerald-600 mb-4">
                 Answer
               </Text>
               <ReactMarkdown
                 components={{
-                  p: ({ node, ...props }) => <p className="prose-p:mb-4 text-gray-800" {...props} />,
+                  p: ({ node, ...props }) => <p className="prose-p:space-y-4 text-[16px] text-gray-700" {...props} />,
                   div: ({ node, ...props }) => <div className="prose max-w-none" {...props} />,
                 }}
               >
