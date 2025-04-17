@@ -43,8 +43,8 @@ export default function MostAskedQuestions({ searchTerm }: Props) {
   
         // Map API response to local structure
         const formattedQuestions = (data?.data || []).map(
-          (q: { question: string }, index: number) => ({
-            id: index + 1 + (currentPage - 1) * 10,
+          (q: { question: string , id: string}, index: number) => ({
+            id: q.id,
             text: q.question,
           })
         );
@@ -64,11 +64,11 @@ export default function MostAskedQuestions({ searchTerm }: Props) {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
+  
+  const router = useRouter();
 
-const router = useRouter();
   const handleQuestionClick = (id: number) => {
-   
-router.push(`/faqs-answer/${id}`); // Navigate to the question details page
+    router.push(`/faqs-answer?id=${id}`);
     console.log('Clicked question ID:', id);
 
   };

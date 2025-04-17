@@ -22,9 +22,9 @@ const PricingTable = () => {
               <Text className={tw(`text-base leading-6 mb-8 text-[#FFFFFFA6]`)}>
                 Start now by downloading the app and create your account on My Mufti with 2 steps
               </Text>
-              <Button variant="outlined" className={tw(`rounded-full`)} onClick={() => setIsOpen(true)}>
+                <Button variant="outlined" className={tw(`rounded-full hover:border-white`)} onClick={() => setIsOpen(true)}>
                 Get Started
-              </Button>
+                </Button>
             </div>
           </div>
         </div>

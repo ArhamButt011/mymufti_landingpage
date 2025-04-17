@@ -8,8 +8,6 @@ const FaqsPage = () => {
     <DefaultLayout>
       <FaqHero />
       <FaqContent />
-      <FaqHero />
-      <FaqContent />
     </DefaultLayout>
   );
 };

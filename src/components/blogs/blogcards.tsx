@@ -76,7 +76,7 @@ const blogCardsData: BlogCardProps[] = [
     date: '25 Oct 2025',
     title: 'Role of Women in Islam',
     description: "Understanding women's rights in Islam...",
-    link: '/blogs/role-of-women-in-islam"',
+    link: '/blogs/role-of-women-in-islam',
   },
   {
     imageUrl: '/images/blog/charity.png',
@@ -104,35 +104,35 @@ const BlogCard: React.FC<BlogCardProps> = ({
   priority = false,
 }) => {
   return (
-    <div className="group h-[460px] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md flex flex-col">
-      <div className="relative w-full h-[250px]">
-        <Image
-          src={imageUrl || '/placeholder.svg'}
-          alt={title}
-          fill
-          priority={priority}
-          loading={priority ? 'eager' : 'lazy'}
-          className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-t-[20px]"
-        />
-      </div>
-      <div className="p-4 bg-white flex flex-col flex-1 rounded-b-[20px]">
-        <Text className="text-Raleway text-500 text-[14px] text-[#A6A6A6]">{date}</Text>
-        <Text
-          as="h3"
-          className="line-clamp-2 font-[24px] font-500 font-raleway text-[#000000] group-hover:text-500 transition-colors tracking-[0%]"
-        >
-          {title}
-        </Text>
-        <Text className="line-clamp-3 font-700 font-Raleway text-[24px] flex-1">
-          {description}
-        </Text>
-        <Link href={link}>
-          <button className="text-[#38B89A] hover:underline transition-colors font-medium mt-auto">
+    <Link href={link} className="block h-full">
+      <div className="group h-[460px] rounded-[20px] overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md flex flex-col cursor-pointer">
+        <div className="relative w-full h-[250px]">
+          <Image
+            src={imageUrl || '/placeholder.svg'}
+            alt={title}
+            fill
+            priority={priority}
+            loading={priority ? 'eager' : 'lazy'}
+            className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-t-[20px]"
+          />
+        </div>
+        <div className="p-4 bg-white flex flex-col flex-1 rounded-b-[20px]">
+          <Text className="text-Raleway text-500 text-[14px] text-[#A6A6A6]">{date}</Text>
+          <Text
+            as="h3"
+            className="line-clamp-2 font-[24px] font-500 font-raleway text-[#000000] group-hover:text-500 transition-colors tracking-[0%]"
+          >
+            {title}
+          </Text>
+          <Text className="line-clamp-3 font-700 font-Raleway text-[24px] flex-1">
+            {description}
+          </Text>
+          <span className="text-[#38B89A] hover:underline transition-colors font-medium mt-auto">
             Read More
-          </button>
-        </Link>
+          </span>
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

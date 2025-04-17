@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Pagination from '@/components/blogs/Pagination'
 
-
 interface BlogCardProps {
   imageUrl: string;
   date: string;
@@ -57,7 +56,6 @@ export default function RecentBlogs() {
       description: 'A look into the significance of the Kaaba...',
       link: '/blogs/why-is-the-significance-of-kaaba-important',
     },
- 
   ];
 
   return (
@@ -65,30 +63,36 @@ export default function RecentBlogs() {
       <h2 className="text-[34px] font-semibold font-raleway mb-4">Recent Blogs</h2>
       <div className="space-y-3">
         {blogCardsData.map((post, index) => (
-          <div key={index} className="bg-white p-3 rounded-lg flex items-stretch gap-3">
-            <div className="w-20 h-30 relative flex-shrink-0">
-              <Image
-                src={post.imageUrl || '/placeholder.svg'}
-                alt={post.title}
-                fill
-                className="rounded-md object-cover"
-              />
-            </div>
-            <div className="flex-1 flex flex-col justify-between">
-              <div>
-                <p className="text-xs text-gray-500 mb-1">{post.date}</p>
-                <h3 className="text-[18px] font-semibold leading-[120%] font-raleway text-gray-900 mb-1">
-                  {post.title}
-                </h3>
-                <p className="text-[14px] font-medium leading-[120%] font-raleway text-gray-600 mb-1">
-                  {post.description}
-                </p>
+          <Link 
+            href={post.link} 
+            key={index} 
+            className="block bg-white p-3 rounded-lg hover:shadow-md transition-shadow cursor-pointer"
+          >
+            <div className="flex items-stretch gap-3">
+              <div className="w-20 h-30 relative flex-shrink-0">
+                <Image
+                  src={post.imageUrl || '/placeholder.svg'}
+                  alt={post.title}
+                  fill
+                  className="rounded-md object-cover"
+                />
               </div>
-              <Link href={post.link} className="text-sm text-teal-500 hover:text-teal-600 font-raleway">
-                Read More
-              </Link>
+              <div className="flex-1 flex flex-col justify-between">
+                <div>
+                  <p className="text-xs text-gray-500 mb-1">{post.date}</p>
+                  <h3 className="text-[18px] font-semibold leading-[120%] font-raleway text-gray-900 mb-1">
+                    {post.title}
+                  </h3>
+                  <p className="text-[14px] font-medium leading-[120%] font-raleway text-gray-600 mb-1">
+                    {post.description}
+                  </p>
+                </div>
+                <span className="text-sm text-teal-500 hover:text-teal-600 font-raleway">
+                  Read More
+                </span>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
