@@ -69,7 +69,7 @@ export default function MostAskedQuestions({ searchTerm }: Props) {
 
   const handleQuestionClick = (id: number) => {
     router.push(`/faqs-answer?id=${id}`);
-    console.log('Clicked question ID:', id);
+    //console.log('Clicked question ID:', id);
 
   };
 
