@@ -25,7 +25,7 @@ const FaqsAnswerPage = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ page: 1 }),
+          body: JSON.stringify({  }),
         });
 
         if (!res.ok) throw new Error('Failed to fetch FAQs');
