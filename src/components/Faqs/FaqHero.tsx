@@ -1,4 +1,3 @@
-// FaqHero.tsx
 'use client';
 
 import Text from '@/components/UI/Text';

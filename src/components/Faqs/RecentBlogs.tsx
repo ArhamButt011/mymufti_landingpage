@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Pagination from '@/components/blogs/Pagination'
+import Pagination from '@/components/blogs/Pagination';
 
 interface BlogCardProps {
   imageUrl: string;
@@ -63,13 +63,13 @@ export default function RecentBlogs() {
       <h2 className="text-[34px] font-semibold font-raleway mb-4">Recent Blogs</h2>
       <div className="space-y-3">
         {blogCardsData.map((post, index) => (
-          <Link 
-            href={post.link} 
-            key={index} 
+          <Link
+            href={post.link}
+            key={index}
             className="block bg-white p-3 rounded-md hover:shadow-md transition-shadow cursor-pointer"
           >
-            <div className="flex items-stretch gap-3">
-              <div className="w-20 h-30 relative flex-shrink-0">
+            <div className="flex items-center gap-3">
+              <div className="w-24 h-24 relative flex-shrink-0">
                 <Image
                   src={post.imageUrl || '/placeholder.svg'}
                   alt={post.title}
@@ -77,6 +77,7 @@ export default function RecentBlogs() {
                   className="rounded-md object-cover"
                 />
               </div>
+
               <div className="flex-1 flex flex-col justify-between">
                 <div>
                   <p className="text-xs text-gray-500 mb-1">{post.date}</p>
