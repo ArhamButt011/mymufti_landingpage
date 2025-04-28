@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@fontsource/inter": "4.2.1",
+    "@radix-ui/react-avatar": "1.1.4",
     "@radix-ui/react-radio-group": "1.2.4",
     "@svgr/webpack": "8.1.0",
     "autoprefixer": "^10.0.0",
@@ -36,6 +37,7 @@
     "lucide-react": "0.487.0",
     "next": "^14.2.5",
     "next-seo": "^6.0.0",
+    "nodemailer": "6.10.1",
     "postcss": "^8.0.0",
     "postcss-loader": "8.1.1",
     "react": "^18.2.0",
@@ -51,6 +53,7 @@
     "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "11.0.0",
     "@types/node": "14.14.28",
+    "@types/nodemailer": "6.4.17",
     "@types/react": "17.0.2",
     "@types/react-dom": "17.0.1",
     "@typescript-eslint/eslint-plugin": "8.1.0",

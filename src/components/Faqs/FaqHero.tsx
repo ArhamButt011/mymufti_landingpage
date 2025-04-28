@@ -1,19 +1,20 @@
+// FaqHero.tsx
 'use client';
 
-import { useState } from 'react';
 import Text from '@/components/UI/Text';
-import FaqContent from './FaqContent';
 
-export default function FaqHero() {
-  const [searchTerm, setSearchTerm] = useState('');
+interface FaqHeroProps {
+  searchTerm: string;
+  onSearchChange: (value: string) => void;
+}
 
+export default function FaqHero({ searchTerm, onSearchChange }: FaqHeroProps) {
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+    onSearchChange(e.target.value);
   };
 
   return (
     <div className="relative w-full">
-      {/* Background image container grows with content */}
       <div className="relative w-full">
         <img
           src="/images/blog/HeroBackground.jpg"
@@ -22,7 +23,6 @@ export default function FaqHero() {
         />
         <div className="absolute inset-0 bg-white opacity-70"></div>
 
-        {/* Content centered with padding and responsive min-height */}
         <div className="relative z-10 flex flex-col items-center justify-center px-4 py-6 sm:py-10 md:py-16 min-h-[300px] sm:min-h-[350px] md:min-h-[400px] text-center">
           <Text
             as="h1"
@@ -36,7 +36,6 @@ export default function FaqHero() {
             out our Full Conversation
           </Text>
 
-          {/* Enlarged Search Bar */}
           <div className="relative w-full max-w-md">
             <input
               type="text"

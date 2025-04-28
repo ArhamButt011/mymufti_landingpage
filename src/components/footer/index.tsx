@@ -25,7 +25,8 @@ const Footer = () => (
       <div className={tw(`w-full mb-5`)}>
         <ul className={tw(`flex flex-col md:flex-row justify-between mx-auto max-w-7xl`)}>
           <li className={tw(`mb-5`)}>
-            <div>
+
+            <div className="mr-4">
               <div className={tw(`mb-5 w-full`)}>
                 <img className={tw(`h-20 w-20`)} src="/images/footerIcon.svg" alt="logo" height={40} width={40} />
               </div>
@@ -52,7 +53,7 @@ const Footer = () => (
           </li>
           <li>
             <div>
-              <h4 className={tw(`text-[23px] font-medium mb-4 text-[#000000]`)}>Quick Links</h4>
+              <h4 className={tw(`text-[23px] font-medium mb-4 mr-1 text-[#000000]`)}>Quick Links</h4>
               <ul>
                 {/* {resourceLinks.map((link) => ( */}
                 <li className={tw(`text-[#78827F] text-base font-medium mb-3`)}>
@@ -123,9 +124,6 @@ const Footer = () => (
                 alt="twitter"
                 className="md:w-8 md:h-8 h-5 w-5"
               />
-            </Link>
-            <Link href="#">
-              <Image width={22} height={22} src={'/images/google.svg'} alt="google" className="md:w-8 md:h-8 h-5 w-5" />
             </Link>
             <Link href="#">
               <Image

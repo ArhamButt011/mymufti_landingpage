@@ -47,49 +47,49 @@ const blogCardsData: BlogCardProps[] = [
     imageUrl: '/images/blog/shiaSunni.svg',
     date: '22 May 2025',
     title: 'What is the Difference Between Sunni and Shia?',
-    description: 'Understanding different sects in Islam...',
+    description: 'Understanding different sects in Islam. It can generally be divided into...',
     link: '/blogs/difference-between-sunni-and-shia',
   },
   {
     imageUrl: '/images/blog/halalFood.svg',
     date: '05 Jun 2025',
     title: 'What is Halal Food?',
-    description: 'Exploring what makes food halal in Islam...',
+    description: 'Food is one of the fundamental aspects of life, and for Muslims, it is essential that the food they consume...',
     link: '/blogs/what-is-halal-food',
   },
   {
     imageUrl: '/images/blog/kaaba.svg',
     date: '18 Jul 2025',
     title: 'Why is the Kaaba Important?',
-    description: 'A look into the significance of the Kaaba...',
+    description: 'A look into the significance of the Kaaba or the house of...',
     link: '/blogs/why-is-the-significance-of-kaaba-important',
   },
   {
     imageUrl: '/images/blog/marriage.svg',
     date: '30 Aug 2025',
     title: 'Islamic View of Marriage',
-    description: 'The importance of marriage in Islam...',
+    description: 'Marriage is a sacred and core institution in Islam, forming a pillar...',
     link: '/blogs/islamic-view-of-marriage',
   },
   {
     imageUrl: '/images/blog/IslamicViewOfWomen.svg',
     date: '25 Oct 2025',
     title: 'Role of Women in Islam',
-    description: "Understanding women's rights in Islam...",
+    description: "Islam is a religion that values equality, respect, and justice for all people, regardless...",
     link: '/blogs/role-of-women-in-islam',
   },
   {
     imageUrl: '/images/blog/charity.png',
     date: '25 Oct 2025',
     title: "Islam's Teachings About Charity",
-    description: 'The importance of charity in Islam...',
+    description: 'Charity holds a central place in Islam. It is not merely a good deed...',
     link: '/blogs/islamic-charity',
   },
   {
     imageUrl: '/images/blog/pillarofislam.svg',
     date: '25 Oct 2025',
     title: 'The Five Pillars of Islam',
-    description: 'The core beliefs of Islam...',
+    description: 'To live a complete life is to have regulations for each aspect...',
     link: '/blogs/what-are-the-five-pillars-of-islam',
   },
 ]
@@ -167,9 +167,9 @@ const BlogCards: React.FC<BlogCardsProps> = ({ searchTerm, layout = '3x3' }) => 
       : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
 
   return (
-    <section id="blog-cards-section" className="container mx-auto px-4 py-12">
+    <section id="blog-cards-section" className="container mx-auto px-4 py-4">
       <div className="relative ml-1 mr-1 bg-[#5F6A6714]">
-        <div className="relative ml-4 mr-4 mt-4 mb-4 pt-10 pl-6 pr-6 pb-6">
+        <div className="relative ml-2 mr-2 mt-2 mb-2 pt-6 pl-6 pr-6 pb-6">
           {currentCards.length > 0 ? (
             <>
               <div className={`grid ${gridClass} gap-6`}>

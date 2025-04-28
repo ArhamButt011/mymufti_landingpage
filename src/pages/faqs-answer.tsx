@@ -50,7 +50,10 @@ const FaqsAnswerPage = () => {
 
   return (
     <DefaultLayout>
-      <FaqHero />
+      <FaqHero 
+        searchTerm="" 
+        onSearchChange={(value: string) => console.log('Search term changed:', value)} 
+      />
 
       <div className="max-w-6xl mx-auto p-6">
         {loading ? (

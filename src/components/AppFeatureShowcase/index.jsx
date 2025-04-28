@@ -126,7 +126,10 @@ const AppFeaturesShowcase = () => {
                         <img
                           src={image || '/placeholder.svg'}
                           alt={`${feature.title} screen ${index + 1}`}
-                          className={tw(`w-full h-auto object-contain drop-shadow-xl`)}
+                          className={tw(
+                            `${feature.id === 3 ? 'h-[400px]' : 'h-auto'}
+                              mx-auto object-contain mx-auto drop-shadow-xl`,
+                          )}
                         />
                       </div>
                     );
